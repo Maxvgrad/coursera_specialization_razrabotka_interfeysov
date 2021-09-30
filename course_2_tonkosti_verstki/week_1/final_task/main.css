@@ -1,0 +1,155 @@
+body {
+    padding: 0;
+    margin: 0;
+}
+
+/* Rate */
+
+.rate {
+    padding: 0;
+    margin: 5px 0;
+    border: none;
+}
+
+.rate__group {
+    position: relative;
+    width: 10em;
+    height: 2em;
+    background-image: url("star_empty.svg");
+    background-size: 2em auto;
+}
+
+.rate__group:focus-within {
+    outline: solid 0.2em cornflowerblue;
+}
+
+.rate__star {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 2em;
+    height: 2em;
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    font-size: inherit;
+    background-size: 2em auto;
+    margin: 0;
+    padding: 0;
+}
+
+.rate__star:focus {
+    outline: none;
+}
+
+.rate__star:checked,
+.rate__star:hover
+{
+    background-image: url("star_full.svg");
+
+}
+
+.rate__star:hover ~ .rate__star {
+    background-image: url("star_empty.svg");
+}
+
+.rate__star:nth-of-type(1) {
+    z-index: 5;
+    width: 2em;
+}
+
+.rate__star:nth-of-type(2) {
+    z-index: 4;
+    width: 4em;
+}
+
+.rate__star:nth-of-type(3) {
+    z-index: 3;
+    width: 6em;
+}
+
+.rate__star:nth-of-type(4) {
+    z-index: 2;
+    width: 8em;
+}
+
+.rate__star:nth-of-type(5) {
+    z-index: 1;
+    width: 10em;
+}
+
+/* CARDS */
+
+.cards {
+    /*background-color: gray;*/
+    padding: 0;
+    /*horizontal margins are 0 ???!*/
+    margin: 10px 10px;
+    box-sizing: border-box;
+    width: 100%;
+    height: 100%;
+    /*overflow: hidden;*/
+}
+
+.card {
+    /*background-color: mistyrose;*/
+    overflow: auto;
+    margin: 10px;
+    width: 100%;
+}
+
+.card__img {
+    box-sizing: border-box;
+    width: 20%;
+    margin: 10px;
+}
+.card__meta {
+    box-sizing: border-box;
+    width: 20%;
+    margin: 10px;
+}
+
+.card__description {
+    box-sizing: border-box;
+    margin: 10px;
+    width: 40%;
+}
+
+.card__img, .card__meta, .card__description {
+    float: left;
+}
+
+.name {
+    align-self: center;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+.name:hover {
+    color: red;
+}
+.card__img > img:hover {
+    opacity: .7;
+}
+
+.card img {
+    width: 200px;
+}
+
+/* View */
+
+#plate:checked ~ ul li {
+    display: inline-block;
+    width: 400px;
+}
+
+#plate:checked ~ ul > li > .card__img {
+    clear: both;
+}
+#plate:checked ~ ul > li > .card__meta {
+    clear: both;
+}
+
+#plate:checked ~ ul > li > .card__description {
+    clear: both;
+}

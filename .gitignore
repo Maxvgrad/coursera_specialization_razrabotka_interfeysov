@@ -1,0 +1,12 @@
+
+*.zip
+*.rar
+*.pdf
+.idea/*
+*.otf
+*.ttf
+*.png
+*.jpg
+*.jpeg
+*.woff
+*.log

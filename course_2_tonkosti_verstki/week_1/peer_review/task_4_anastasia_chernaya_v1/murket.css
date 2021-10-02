@@ -1,0 +1,145 @@
+img {
+    width: 170px;
+}
+img:hover {
+    opacity: 0.5;
+}
+a:hover {
+    color: red;
+}
+.last_price {
+    text-decoration: line-through;
+    font-size: 0.8em;
+    color: silver;
+}
+.item_category {
+    text-decoration: underline;
+}
+.container {
+    margin: 5px;
+}
+
+.item {
+    width: 200px;
+    height: 700px;
+    margin: 15px;
+    display: inline-block;
+}
+.item_img {
+    height: 350px;
+    display: table-cell;
+    vertical-align: bottom;
+}
+.text_container {
+    display: block;
+    height: 350px;
+    overflow: hidden;
+}
+.rating {
+    margin: 0 0 1em 0;
+    padding: 0;
+    border: none;
+}
+.rating__caption {
+    padding: 0;
+    margin-bottom: 0.5em;
+}
+.rating__star {
+ position: absolute;
+ top: 0;
+ left: 0;
+ margin: 0;
+ font-size: inherit;
+ height: 2em;
+ background-size: 2em auto;
+ background-repeat: repeat-x;
+ -webkit-appearance: none;
+ -moz-appearance: none;
+ appearance: none;
+}
+.rating__star:focus { 
+ outline: none;
+}
+.rating__star:checked, 
+.rating__star:hover {
+  background-image: url(https://cdn.glitch.com/be154eac-f8a7-4b55-9350-27cb2d6ff6c0%2Fon.svg);  
+}
+.rating__star:hover ~ .reting__star {
+    background-image: url(https://cdn.glitch.com/be154eac-f8a7-4b55-9350-27cb2d6ff6c0%2Foff.svg);    
+}
+
+.rating__group {
+    position: relative;
+    width: 10em;
+    height: 2em; 
+    background-image: url(https://cdn.glitch.com/be154eac-f8a7-4b55-9350-27cb2d6ff6c0%2Foff.svg);
+    background-size: 2em auto;
+    background-repeat: repeat-x;
+}
+/*options*/
+.rating__star:nth-of-type(1) {
+    z-index: 5;
+    width: 2em;
+}
+.rating__star:nth-of-type(2) {
+    z-index: 4;
+    width: 4em;
+}
+.rating__star:nth-of-type(3) {
+    z-index: 3;
+    width: 6em;
+}
+.rating__star:nth-of-type(4) {
+    z-index: 2;
+    width: 8em;
+}
+.rating__star:nth-of-type(5) {
+    z-index: 1;
+    width: 10em;
+}
+.list:checked ~ .row .item {
+display: block;	
+width: 100%;
+height: initial;
+padding:0;
+margin:0;
+clear: both;
+}
+.list:checked ~.row .item .item_img {
+width: 200px;
+height: 350px;
+display: inline-block;
+margin-right: 2%;
+clear: both;
+
+}
+.list:checked ~.row .item .text_container {
+width: 75%;
+height: 350px;
+display: inline-block;
+clear: both;
+}
+.list:checked ~.row .item .item_img>img {
+    width: 100%;
+    vertical-align: top;
+}
+.tile + label {
+content: url(https://image.shutterstock.com/image-vector/event-schedule-icon-600w-606709283.jpg);
+width: 3em;
+}
+.list + label {
+content: url(https://image.shutterstock.com/image-vector/checklist-icon-one-set-web-600w-556659844.jpg);
+width: 3em;
+} 
+.tile, .list {
+    display: none;
+}
+* {
+font-family: sans-serif;
+}
+.item_price {
+    font-family: sans-serif;
+    font-size: 1.5em;
+    color: red;
+}
+

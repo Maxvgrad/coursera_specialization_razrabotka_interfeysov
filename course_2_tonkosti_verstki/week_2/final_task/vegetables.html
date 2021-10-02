@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .page__1 {
+            width: 1000px;
+            background: yellowgreen;
+            height: 500px;
+            padding: 20px;
+        }
+
+        .shield {
+            background: yellow;
+            height: 500px;
+        }
+
+        ul {
+            list-style-type: none;
+            background: lightyellow;
+            position: absolute;
+            width: 400px;
+            height: 500px;
+            left: 50%;
+            transform: translate(-50%,0);
+        }
+        li {
+            position: absolute;
+            float: left;
+            margin: 20px;
+            width: 20%;
+            height: auto;
+            background: grey;
+        }
+
+        .item {
+            width: 200px;
+            height: 400px;
+        }
+
+        .item__shield {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 200px;
+            height: 400px;
+            background: #1d7fbb;
+            opacity: 0.5;
+            z-index: 0;
+        }
+
+        .item__img {
+            width: 100px;
+            height: auto;
+            z-index: 1;
+        }
+
+
+        li:nth-of-type(1) {
+            left: 0;
+        }
+
+        li:nth-of-type(2) {
+            left: 25%;
+        }
+
+        li:nth-of-type(3) {
+            left: 50%;
+        }
+
+        li:nth-of-type(4) {
+            left: 75%;
+        }
+
+        item__img:hover > .item__description {
+            z-index: 0;
+        }
+        li {
+
+        }
+    </style>
+</head>
+<body>
+
+<div class="page__1">
+    <div class="shield">
+        <ul class="images">
+            <li class="item">
+                <img class="item__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Vegetable-Carrot-Bundle-wStalks.jpg/2880px-Vegetable-Carrot-Bundle-wStalks.jpg" alt="carrot">
+                <p class="item__description">
+                    The carrot (Daucus carota subsp. sativus) is a root vegetable, typically orange in color, though
+                    purple, black, red, white, and yellow cultivars exist,[2][3][4] all of which are domesticated forms
+                    of the wild carrot, Daucus carota, native to Europe and Southwestern Asia. The plant probably
+                    originated in Persia and was originally cultivated for its leaves and seeds. The most commonly eaten
+                    part of the plant is the taproot, although the stems and leaves are also eaten. The domestic carrot
+                    has been selectively bred for its greatly enlarged, more palatable, less woody-textured taproot.
+                </p>
+                <div class="item__shield"></div>
+            </li>
+            <li>
+                X2
+                <!--        <img src="https://upload.wikimedia.org/wikipedia/commons/2/25/Cauliflower.JPG" alt="cauliflower">-->
+                <!--
+                Cauliflower is one of several vegetables in the species Brassica oleracea in the genus Brassica, which is in the Brassicaceae (or Mustard) family. It is an annual plant that reproduces by seed. Typically, only the head is eaten – the edible white flesh sometimes called "curd" (with a similar appearance to cheese curd).[1] The cauliflower head is composed of a white inflorescence meristem. Cauliflower heads resemble those in broccoli, which differs in having flower buds as the edible portion. Brassica oleracea also includes broccoli, Brussels sprouts, cabbage, collard greens, and kale, collectively called "cole" crops,[2] though they are of different cultivar groups.
+                -->
+            </li>
+
+            <li>
+                X3
+                <!--        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ARS_cucumber.jpg/1280px-ARS_cucumber.jpg" alt="cucumber">-->
+                <!--
+                Cucumber (Cucumis sativus) is a widely-cultivated creeping vine plant in the Cucurbitaceae gourd family that bears usually cylindrical fruits, which are used as vegetables.[1] Considered an annual plant,[2] there are three main varieties of cucumber — slicing, pickling, and burpless/seedless — within which several cultivars have been created. The cucumber originates from South Asia, but now grows on most continents, as many different types of cucumber are traded on the global market. In North America, the term wild cucumber refers to plants in the genera Echinocystis and Marah, though the two are not closely related.
+                -->
+            </li>
+            <li>
+                X4
+                <!--        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Amanita_muscaria_%28fly_agaric%29.JPG/1280px-Amanita_muscaria_%28fly_agaric%29.JPG" alt="mushroom">-->
+                <!--
+                A mushroom or toadstool is the fleshy, spore-bearing fruiting body of a fungus, typically produced above ground, on soil, or on its food source.
+        The standard for the name "mushroom" is the cultivated white button mushroom, Agaricus bisporus; hence the word "mushroom" is most often applied to those fungi (Basidiomycota, Agaricomycetes) that have a stem (stipe), a cap (pileus), and gills (lamellae, sing. lamella) on the underside of the cap. "Mushroom" also describes a variety of other gilled fungi, with or without stems, therefore the term is used to describe the fleshy fruiting bodies of some Ascomycota. These gills produce microscopic spores that help the fungus spread across the ground or its occupant surface.
+                -->
+            </li>
+        </ul>
+
+
+    </div>
+</div>
+</body>
+</html>

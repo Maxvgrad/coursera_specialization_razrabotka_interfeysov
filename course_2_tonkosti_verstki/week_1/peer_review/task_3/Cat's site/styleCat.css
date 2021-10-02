@@ -1,0 +1,77 @@
+
+
+.Cat{
+    display: inline-block;
+    box-sizing: border-box;
+    width: 250px;
+    margin-right: 70px;
+    vertical-align: text-top;
+}
+
+a{
+    text-decoration: none;
+    font-size: 19px;
+}
+
+.newPrice{
+    font-size: 20px;
+    color: rgb(163, 33, 10);
+}
+
+.oldPrice{
+    font-size: 16px;
+    color: rgb(46, 46, 46);
+    text-decoration: line-through;
+}
+
+.href{
+    font-size: 13px;
+    color:rgb(116, 116, 116);
+    text-decoration: underline;
+}
+
+.about{
+font-size: 13px;
+line-height: 0.9;
+margin-top: 3%;
+}
+
+.rating-area {
+    overflow: hidden;
+    padding: 4px 100px 4px 0;
+    margin: 0;
+    float: left;
+}
+
+.rating-area:not(:checked) > input {
+	display: none;
+}
+
+.rating-area:not(:checked) > label {
+    float: right;
+	width: 23px;
+    margin: 0;
+	font-size: 25px;
+	line-height: 25px;
+	color: lightgrey;
+	text-shadow: 1px 1px #bbb;
+}
+.rating-area:not(:checked) > label:before {
+	content: '★';
+}
+.rating-area  input:checked ~ label:not(:checked) {
+    color: rgb(255, 238, 144);
+    text-shadow: 1px 1px rgb(255, 225, 170);
+}
+
+img:hover{
+    opacity: 0.7;
+}
+
+.name:hover{
+    color: red;
+}
+
+img{
+    max-width: 250px;
+}

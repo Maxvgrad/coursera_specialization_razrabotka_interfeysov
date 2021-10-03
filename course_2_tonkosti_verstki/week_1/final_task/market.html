@@ -6,45 +6,48 @@
     <link rel="stylesheet" href="main.css">
 </head>
 <body>
-
-<input name="view" id="plate" type="radio">
-<label for="plate">Plate</label>
-<input name="view" id="list" type="radio" checked>
+<input name="view" id="grid" type="radio" checked>
+<label for="grid">Grid</label>
+<input name="view" id="list" type="radio">
 <label for="list">List</label>
-
 <ul class="cards">
     <li class="card">
-        <figure class="card__img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Gustav_chocolate.jpg">
-        </figure>
-        <div class="card__meta">
-            <div class="name">Abyssinian test a CSS property 'text-overflow' some more text</div>
-            <div class="breed">Abyssinian</div>
-            <fieldset class="rate">
-                <div class="rate__group">
-                    <input class="rate__star" type="radio" value="2" name="cat-1" aria-label="negative" checked>
-                    <input class="rate__star" type="radio" value="3" name="cat-1" aria-label="average">
-                    <input class="rate__star" type="radio" value="4" name="cat-1" aria-label="good">
-                    <input class="rate__star" type="radio" value="5" name="cat-1" aria-label="great">
-                    <input class="rate__star" type="radio" value="1" name="cat-1" aria-label="perfect">
-                </div>
-            </fieldset>
-            <div class="price">209.90</div>
-        </div>
-        <div class="card__description">
-            Abyssinians are highly intelligent and intensely inquisitive.
-            They love to investigate and will leave no nook or cranny unexplored.
-            They’re sometimes referred to as “Aby-grabbys” because they tend to take things that grab their interest.
-            The playful Aby loves to jump and climb. Keep a variety of toys on hand to keep her occupied, including puzzle toys that challenge her intelligence.
-        </div>
+        <article class="card__cat">
+            <figure class="card__img">
+                <img class="cat__img" src="https://upload.wikimedia.org/wikipedia/commons/9/9b/Gustav_chocolate.jpg">
+            </figure>
+            <div class="card__meta">
+                <div class="cat__name">Abyssinian test a CSS property 'text-overflow' some more text</div>
+                <div class="breed">Cats - Abyssinian</div>
+                <fieldset class="rate">
+                    <div class="rate__group">
+                        <input class="rate__star" type="radio" value="2" name="cat-1" aria-label="negative" checked>
+                        <input class="rate__star" type="radio" value="3" name="cat-1" aria-label="average">
+                        <input class="rate__star" type="radio" value="4" name="cat-1" aria-label="good">
+                        <input class="rate__star" type="radio" value="5" name="cat-1" aria-label="great">
+                        <input class="rate__star" type="radio" value="1" name="cat-1" aria-label="perfect">
+                    </div>
+                </fieldset>
+                <div class="price"><span class="cat__price__after_discount">209.90</span><span class="cat__price">300</span></div>
+            </div>
+            <div class="card__description">
+                Abyssinians are highly intelligent and intensely inquisitive.
+                They love to investigate and will leave no nook or cranny unexplored.
+                They’re sometimes referred to as “Aby-grabbys” because they tend to take things that grab their
+                interest.
+                The playful Aby loves to jump and climb. Keep a variety of toys on hand to keep her occupied, including
+                puzzle toys that challenge her intelligence.
+            </div>
+        </article>
     </li>
     <li class="card">
+        <article class="card__cat">
         <figure class="card__img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Rex_staredown.jpg">
+            <img class="cat__img" src="https://upload.wikimedia.org/wikipedia/commons/5/5c/Rex_staredown.jpg">
         </figure>
         <div class="card__meta">
-            <div class="name">Cornish Rex</div>
-            <div class="breed">Cornish Rex</div>
+            <div class="cat__name">Cornish Rex</div>
+            <div class="breed">Cats - Cornish Rex</div>
             <fieldset class="rate">
                 <div class="rate__group">
                     <input class="rate__star" type="radio" value="2" name="cat-2" aria-label="negative">
@@ -54,21 +57,23 @@
                     <input class="rate__star" type="radio" value="1" name="cat-2" aria-label="perfect">
                 </div>
             </fieldset>
-            <div class="price">209.90</div>
+            <div class="price"><span class="cat__price__after_discount">209.90</span><span class="cat__price">300</span></div>
         </div>
         <div class="card__description">
             Bat-eared, big-eyed and wavy-coated, the Cornish Rex has a distinctive look and exceptionally silky coat due to not having guard hairs like other breeds.
             This active cat has a small, whippetlike body and loves to climb, leap and sprint.
             With kittenlike antics that last a lifetime, this feline likes to be where the action is. The Cornish Rex is perfect for those who want a cat to participate in their family life.
         </div>
+        </article>
     </li>
     <li class="card">
+        <article class="card__cat">
         <figure class="card__img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Devon_Rex_Cassini.jpeg/1280px-Devon_Rex_Cassini.jpeg">
+            <img class="cat__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/ad/Devon_Rex_Cassini.jpeg/1280px-Devon_Rex_Cassini.jpeg">
         </figure>
         <div class="card__meta">
-            <div class="name">Devon Rex</div>
-            <div class="breed">Devon Rex</div>
+            <div class="cat__name">Devon Rex</div>
+            <div class="breed">Cats - Devon Rex</div>
             <fieldset class="rate">
                 <div class="rate__group">
                     <input class="rate__star" type="radio" value="2" name="cat-3" aria-label="negative">
@@ -78,19 +83,21 @@
                     <input class="rate__star" type="radio" value="1" name="cat-3" aria-label="perfect">
                 </div>
             </fieldset>
-            <div class="price">209.90</div>
+            <div class="price"><span class="cat__price__after_discount">209.90</span><span class="cat__price">300</span></div>
         </div>
         <div class="card__description">
             Because of her curly coat and her tail, which wags when she is happy, the Devon Rex is sometimes called a poodle who purrs.
         </div>
+        </article>
     </li>
     <li class="card">
+        <article class="card__cat">
         <figure class="card__img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Egyptian_Mau_Bronze.jpg/2560px-Egyptian_Mau_Bronze.jpg">
+            <img class="cat__img" src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/7f/Egyptian_Mau_Bronze.jpg/2560px-Egyptian_Mau_Bronze.jpg">
         </figure>
         <div class="card__meta">
-            <div class="name">Egyptian Mau</div>
-            <div class="breed">Egyptian Mau</div>
+            <div class="cat__name">Egyptian Mau</div>
+            <div class="breed">Cats - Egyptian Mau</div>
             <fieldset class="rate">
                 <div class="rate__group">
                     <input class="rate__star" type="radio" value="2" name="cat-4" aria-label="negative">
@@ -100,21 +107,23 @@
                     <input class="rate__star" type="radio" value="1" name="cat-4" aria-label="perfect">
                 </div>
             </fieldset>
-            <div class="price">209.90</div>
+            <div class="price"><span class="cat__price__after_discount">209.90</span><span class="cat__price">300</span></div>
         </div>
         <div class="card__description">
             The Egyptian Mau is fiercely devoted to her humans and vocally shows signs of happiness and affection by meowing in a pleasant voice.
             She’ll also slowly swish her tail and knead with her front paws. She loves to display her hunting skills by chasing and retrieving a toy.
             As a moderate- to highly active breed, you may find her on top of your refrigerator or bookshelves.
         </div>
+        </article>
     </li>
     <li class="card">
+        <article class="card__cat">
         <figure class="card__img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Havana_Brown_-_choco.jpg">
+            <img class="cat__img" src="https://upload.wikimedia.org/wikipedia/commons/b/bd/Havana_Brown_-_choco.jpg">
         </figure>
         <div class="card__meta">
-            <div class="name">Havana Brown</div>
-            <div class="breed">Havana Brown</div>
+            <div class="cat__name">Havana Brown</div>
+            <div class="breed">Cats - Havana Brown</div>
             <fieldset class="rate">
                 <div class="rate__group">
                     <input class="rate__star" type="radio" value="2" name="cat-5" aria-label="negative">
@@ -124,7 +133,7 @@
                     <input class="rate__star" type="radio" value="1" name="cat-5" aria-label="perfect" checked>
                 </div>
             </fieldset>
-            <div class="price">209.90</div>
+            <div class="price"><span class="cat__price__after_discount">209.90</span><span class="cat__price">300</span></div>
         </div>
         <div class="card__description">
             The Havana Brown is called the puppy of the cat fancy because this breed loves to follow her owners everywhere.
@@ -132,14 +141,16 @@
             Unlike cats that use their sense of smell to investigate curiosities, this feline extends her paws, often appearing to be holding out a paw of friendship.
             The Havana Brown is social and doesn’t like being left alone too long.
         </div>
+        </article>
     </li>
     <li class="card">
+        <article class="card__cat">
         <figure class="card__img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/56/JapaneseBobtailBlueEyedMi-ke.JPG">
+            <img class="cat__img" src="https://upload.wikimedia.org/wikipedia/commons/5/56/JapaneseBobtailBlueEyedMi-ke.JPG">
         </figure>
         <div class="card__meta">
-            <div class="name">Japanese Bobtail</div>
-            <div class="breed">Japanese Bobtail</div>
+            <div class="cat__name">Japanese Bobtail</div>
+            <div class="breed">Cats - Japanese Bobtail</div>
             <fieldset class="rate">
                 <div class="rate__group">
                     <input class="rate__star" type="radio" value="2" name="cat-6" aria-label="negative" checked>
@@ -149,7 +160,7 @@
                     <input class="rate__star" type="radio" value="1" name="cat-6" aria-label="perfect">
                 </div>
             </fieldset>
-            <div class="price">209.90</div>
+            <div class="price"><span class="cat__price__after_discount">209.90</span><span class="cat__price">300</span></div>
         </div>
         <div class="card__description">
             One of the oldest cat breeds, the Japanese Bobtail is believed to bring good luck and prosperity.
@@ -157,14 +168,16 @@
             This delightfully mischievous feline enjoys a good game of fetch and likes to carry things in her mouth.
             A healthy breed that lives an average of 15 to 18 years, the Japanese Bobtail is social and particularly good with children.
         </div>
+        </article>
     </li>
     <li class="card">
+        <article class="card__cat">
         <figure class="card__img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Veda%2Cchat-adulte-m%C3%A2le-race-korat.JPG">
+            <img class="cat__img" src="https://upload.wikimedia.org/wikipedia/commons/c/c1/Veda%2Cchat-adulte-m%C3%A2le-race-korat.JPG">
         </figure>
         <div class="card__meta">
-            <div class="name">Korat</div>
-            <div class="breed">Korat</div>
+            <div class="cat__name">Korat</div>
+            <div class="breed">Cats - Korat</div>
             <fieldset class="rate">
                 <div class="rate__group">
                     <input class="rate__star" type="radio" value="2" name="cat-7" aria-label="negative">
@@ -174,7 +187,7 @@
                     <input class="rate__star" type="radio" value="1" name="cat-7" aria-label="perfect">
                 </div>
             </fieldset>
-            <div class="price">209.90</div>
+            <div class="price"><span class="cat__price__after_discount">209.90</span><span class="cat__price">300</span></div>
         </div>
         <div class="card__description">
             A rare Thai breed, the Korat is an affectionate constant companion that is gentle and good with children.
@@ -182,14 +195,16 @@
             The breed is said to have extraordinary powers of hearing, scent and sight.
             The Korat’s silver-tipped blue coat, described in Thailand as rain-cloud gray, has a shimmering effect.
         </div>
+        </article>
     </li>
     <li class="card">
+        <article class="card__cat">
         <figure class="card__img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Laperm_LH_blacktortie_white.jpg">
+            <img class="cat__img" src="https://upload.wikimedia.org/wikipedia/commons/e/e1/Laperm_LH_blacktortie_white.jpg">
         </figure>
         <div class="card__meta">
-            <div class="name">LaPerm</div>
-            <div class="breed">LaPerm</div>
+            <div class="cat__name">LaPerm</div>
+            <div class="breed">Cats - LaPerm</div>
             <fieldset class="rate">
                 <div class="rate__group">
                     <input class="rate__star" type="radio" value="2" name="cat-8" aria-label="negative">
@@ -199,21 +214,23 @@
                     <input class="rate__star" type="radio" value="1" name="cat-8" aria-label="perfect">
                 </div>
             </fieldset>
-            <div class="price">209.90</div>
+            <div class="price"><span class="cat__price__after_discount">209.90</span><span class="cat__price">300</span></div>
         </div>
         <div class="card__description">
             Distinguished by her curly, rippled coat and people-oriented personality, the LaPerm is calm and friendly, yet at other times energetic and inquisitive.
             This feline thrives on attention and likes to be close to her human companions.
             Though curious, this breed is content to be a lap cat and close to whatever is going on. The LaPerm blossoms with a loving family.
         </div>
+        </article>
     </li>
     <li class="card">
+        <article class="card__cat">
         <figure class="card__img">
-            <img src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Maine_Coon_cat_by_Tomitheos.JPG">
+            <img class="cat__img" src="https://upload.wikimedia.org/wikipedia/commons/5/5a/Maine_Coon_cat_by_Tomitheos.JPG">
         </figure>
         <div class="card__meta">
-            <div class="name">Maine Coon</div>
-            <div class="breed">Maine Coon</div>
+            <div class="cat__name">Maine Coon</div>
+            <div class="breed">Cats - Maine Coon</div>
             <fieldset class="rate">
                 <div class="rate__group">
                     <input class="rate__star" type="radio" value="2" name="cat-9" aria-label="negative">
@@ -223,19 +240,22 @@
                     <input class="rate__star" type="radio" value="1" name="cat-9" aria-label="perfect">
                 </div>
             </fieldset>
-            <div class="price">209.90</div>
+            <div class="price"><span class="cat__price__after_discount">209.90</span><span class="cat__price">300</span></div>
         </div>
         <div class="card__description">
             Maine Coon cats are gentle natured and friendly, making them good companions. They are often tenderly playful and curious, making them kitten-like throughout their lives.
         </div>
+        </article>
+
     </li>
     <li class="card">
+        <article class="card__cat">
         <figure class="card__img">
-            <img src="https://www.purina.com/sites/g/files/auxxlc196/files/styles/kraken_generic_max_width_480/public/Savannah_body_7.jpg?itok=GJJ1khES">
+            <img class="cat__img" src="https://www.purina.com/sites/g/files/auxxlc196/files/styles/kraken_generic_max_width_480/public/Savannah_body_7.jpg?itok=GJJ1khES">
         </figure>
         <div class="card__meta">
-            <div class="name">Savannah Cat Breed</div>
-            <div class="breed">Savannah Cat Breed</div>
+            <div class="cat__name">Savannah Cat Breed</div>
+            <div class="breed">Cats - Savannah Cat Breed</div>
             <fieldset class="rate">
                 <div class="rate__group">
                     <input class="rate__star" type="radio" value="2" name="cat-10" aria-label="negative">
@@ -245,12 +265,13 @@
                     <input class="rate__star" type="radio" value="1" name="cat-10" aria-label="perfect" checked>
                 </div>
             </fieldset>
-            <div class="price">209.90</div>
+            <div class="price"><span class="cat__price__after_discount">209.90</span><span class="cat__price">300</span></div>
         </div>
         <div class="card__description">
             The Savannah Cat’s personality is playful, adventurous and loyal.
             Unlike most cats, she loves to play in water and can even be trained to walk on a leash and play fetch. Don’t be fooled by her dog-like personality, though.
         </div>
+        </article>
     </li>
 
 </ul>

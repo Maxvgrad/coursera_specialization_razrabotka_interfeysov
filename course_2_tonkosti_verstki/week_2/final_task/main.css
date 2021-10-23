@@ -1,0 +1,264 @@
+body {
+    margin: 50px 0 0;
+    height: 100vh;
+    overflow: hidden;
+}
+
+.vegetable__modal__checkbox {
+    display: none;
+}
+
+.carousel {
+    position: absolute;
+    left: 100%;
+}
+
+.vegetable__image {
+    display: block;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    margin-top: 50px;
+}
+
+.vegetable__modal_controller {
+    display: block;
+    width: 20%;
+    height: 400px;
+    top: 0;
+}
+
+.vegetable__description {
+    width: 38%;
+    top: 25px;
+    height: 600px;
+    padding: 425px 5px 20px;
+    display: none;
+    box-sizing: border-box;
+    margin: 5px;
+
+    white-space: normal;
+    overflow: hidden;
+}
+
+.vegetable__modal_controller:hover {
+    z-index: 2;
+
+}
+
+.vegetable__modal_controller:hover + .vegetable__description
+{
+    display: block;
+    background: white;
+    box-shadow: 5px 5px 5px 5px grey;
+    z-index: 1;
+}
+
+.page_controller {
+    border: none;
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    white-space: normal;
+}
+
+.item_page {
+    position: fixed;
+    top: 700px;
+}
+.item_page:nth-of-type(1) {
+    left: 45%;
+}
+.item_page:nth-of-type(2) {
+    left: 47%;
+}
+.item_page:nth-of-type(3) {
+    left: 49%;
+}
+.item_page:nth-of-type(4) {
+    left: 51%;
+}
+.item_page:nth-of-type(5) {
+    left: 53%;
+}
+.item_page:nth-of-type(6) {
+    left: 55%;
+}
+
+/* MODAL */
+
+.vegetable__modal__checkbox:checked + .vegetable__modal_controller {
+    position: absolute;
+    width:40%;
+    height:80%;
+    top: 50% !important;
+    left: 50% !important;
+    z-index: 21;
+    pointer-events: none;
+}
+
+.vegetable__modal__checkbox:checked + .vegetable__modal_controller .vegetable__image {
+    transform: translate(0, -50%);
+    margin: auto;
+}
+
+.vegetable__modal__checkbox:checked ~ .modal {
+    position: fixed;
+    width: 100%;
+    height: 100%;
+    background: grey;
+    display: block;
+    opacity: 0.8;
+    left: 0;
+    top: 0;
+}
+
+.vegetable__modal_close {
+    position: fixed;
+    z-index: 23;
+    width: 2%;
+    height: 2%;
+    left: 98%;
+    display: none;
+}
+
+.close_modal img {
+    position: fixed;
+    z-index: 23;
+    width: 2%;
+    height: 2%;
+    left: 96%;
+    top: 2%;
+}
+
+.vegetable__modal_close:checked {
+    display: none;
+}
+
+.vegetable__modal_close:checked + img {
+    display: none;
+}
+
+/* CAROUSEL */
+#page_1:checked ~ label.vegetable__modal_controller:nth-of-type(7),
+#page_1:checked ~ .vegetable__description:nth-of-type(1) {
+    left: 20%;
+    transform: translate(-50%);
+
+}
+#page_1:checked ~ .vegetable__modal_controller:nth-of-type(8),
+#page_1:checked ~ .vegetable__description:nth-of-type(2) {
+    left: 40%;
+    transform: translate(-50%);
+}
+#page_1:checked ~ .vegetable__modal_controller:nth-of-type(9),
+#page_1:checked ~ .vegetable__description:nth-of-type(3) {
+    left: 60%;
+    transform: translate(-50%);
+}
+#page_1:checked ~ .vegetable__modal_controller:nth-of-type(10),
+#page_1:checked ~ .vegetable__description:nth-of-type(4) {
+    left: 80%;
+    transform: translate(-50%);
+}
+#page_2:checked ~ .vegetable__modal_controller:nth-of-type(10),
+#page_2:checked ~ .vegetable__description:nth-of-type(4) {
+    left: 20%;
+    transform: translate(-50%);
+}
+#page_2:checked ~ .vegetable__modal_controller:nth-of-type(11),
+#page_2:checked ~ .vegetable__description:nth-of-type(5) {
+    left: 40%;
+    transform: translate(-50%);
+}
+#page_2:checked ~ .vegetable__modal_controller:nth-of-type(12),
+#page_2:checked ~ .vegetable__description:nth-of-type(6) {
+    left: 60%;
+    transform: translate(-50%);
+}
+#page_2:checked ~ .vegetable__modal_controller:nth-of-type(13),
+#page_2:checked ~ .vegetable__description:nth-of-type(7) {
+    left: 80%;
+    transform: translate(-50%);
+}
+#page_3:checked ~ .vegetable__modal_controller:nth-of-type(13),
+#page_3:checked ~ .vegetable__description:nth-of-type(7) {
+    left: 20%;
+    transform: translate(-50%);
+}
+#page_3:checked ~ .vegetable__modal_controller:nth-of-type(14),
+#page_3:checked ~ .vegetable__description:nth-of-type(8) {
+    left: 40%;
+    transform: translate(-50%);
+}
+#page_3:checked ~ .vegetable__modal_controller:nth-of-type(15),
+#page_3:checked ~ .vegetable__description:nth-of-type(9) {
+    left: 60%;
+    transform: translate(-50%);
+}
+#page_3:checked ~ .vegetable__modal_controller:nth-of-type(16),
+#page_3:checked ~ .vegetable__description:nth-of-type(10) {
+    left: 80%;
+    transform: translate(-50%);
+}
+#page_4:checked ~ .vegetable__modal_controller:nth-of-type(16),
+#page_4:checked ~ .vegetable__description:nth-of-type(10) {
+    left: 20%;
+    transform: translate(-50%);
+}
+#page_4:checked ~ .vegetable__modal_controller:nth-of-type(17),
+#page_4:checked ~ .vegetable__description:nth-of-type(11) {
+    left: 40%;
+    transform: translate(-50%);
+}
+#page_4:checked ~ .vegetable__modal_controller:nth-of-type(18),
+#page_4:checked ~ .vegetable__description:nth-of-type(12) {
+    left: 60%;
+    transform: translate(-50%);
+}
+#page_4:checked ~ .vegetable__modal_controller:nth-of-type(19),
+#page_4:checked ~ .vegetable__description:nth-of-type(13) {
+    left: 80%;
+    transform: translate(-50%);
+}
+#page_5:checked ~ .vegetable__modal_controller:nth-of-type(19),
+#page_5:checked ~ .vegetable__description:nth-of-type(13) {
+    left: 20%;
+    transform: translate(-50%);
+}
+#page_5:checked ~ .vegetable__modal_controller:nth-of-type(20),
+#page_5:checked ~ .vegetable__description:nth-of-type(14) {
+    left: 40%;
+    transform: translate(-50%);
+}
+#page_5:checked ~ .vegetable__modal_controller:nth-of-type(21),
+#page_5:checked ~ .vegetable__description:nth-of-type(15) {
+    left: 60%;
+    transform: translate(-50%);
+}
+#page_5:checked ~ .vegetable__modal_controller:nth-of-type(22),
+#page_5:checked ~ .vegetable__description:nth-of-type(16) {
+    left: 80%;
+    transform: translate(-50%);
+}
+#page_6:checked ~ .vegetable__modal_controller:nth-of-type(22),
+#page_6:checked ~ .vegetable__description:nth-of-type(16) {
+    left: 20%;
+    transform: translate(-50%);
+}
+#page_6:checked ~ .vegetable__modal_controller:nth-of-type(23),
+#page_6:checked ~ .vegetable__description:nth-of-type(17) {
+    left: 40%;
+    transform: translate(-50%);
+}
+#page_6:checked ~ .vegetable__modal_controller:nth-of-type(24),
+#page_6:checked ~ .vegetable__description:nth-of-type(18) {
+    left: 60%;
+    transform: translate(-50%);
+}
+#page_6:checked ~ .vegetable__modal_controller:nth-of-type(25),
+#page_6:checked ~ .vegetable__description:nth-of-type(19) {
+    left: 80%;
+    transform: translate(-50%);
+}

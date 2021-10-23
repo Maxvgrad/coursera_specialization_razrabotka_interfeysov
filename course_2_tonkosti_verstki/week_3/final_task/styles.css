@@ -1,0 +1,233 @@
+
+html,
+body {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+}
+.wrapper {
+    display: flex;
+    flex-direction: column;
+    min-height: 100%;
+    background: #e0e0e0;
+}
+h1 {
+    text-align: center;
+}
+.content {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    column-gap: 10px;
+    padding: 10px;
+}
+.footer {
+    flex: 0 0 auto;
+    border-top: solid dimgrey;
+    display: flex;
+    flex-direction: row;
+    align-content: space-between;
+}
+
+.menu {
+    background: lightgrey;
+    flex: 2 auto;
+    flex-direction: column;
+    padding: 10px 10px 10px 10px;
+    align-self: stretch;
+}
+
+.menu_button {
+    display: block;
+    height: 4em;
+}
+
+#type-1:checked ~ nav .abyssinian {
+    background: dimgrey;
+    color: white;
+}
+#type-2:checked ~ nav .british {
+    background: dimgrey;
+    color: white;
+}
+#type-3:checked ~ nav .russian_blue {
+    background: dimgrey;
+    color: white;
+}
+#type-4:checked ~ nav .siamskaya {
+    background: dimgrey;
+    color: white;
+}
+
+#type-1:checked ~ ul > :not(.abyssinian) {
+    opacity: .3;
+}
+
+#type-2:checked ~ ul > :not(.british) {
+    opacity: .3;
+}
+
+#type-3:checked ~ ul > :not(.russian_blue) {
+    opacity: .3;
+}
+
+#type-4:checked ~ ul > :not(.siamskaya) {
+    opacity: .3;
+}
+
+.cat_type_input {
+    display: none;
+}
+
+.gallery {
+    flex: 5 auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
+    grid-gap: 5px;
+    margin: 0;
+    padding-left: 0;
+    align-self: stretch;
+}
+
+.gallery__cat_image > img {
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    opacity: 1;
+
+}
+
+.intro {
+    position: relative;
+    height: 20px;
+    background: rgba(204, 204, 204, 0.5);;
+    width: 100px;
+    color: white;
+    left: 0;
+    top: -40px;
+    z-index: -1;
+}
+
+img:hover + .intro {
+    z-index: 1;
+}
+
+.intro:hover {
+    z-index: 1;
+}
+
+.gallery__cat_image {
+    height: 200px;
+    list-style-type: none;
+}
+
+.gallery__cat_image:nth-of-type(7n + 1) {
+    grid-column: 1/2;
+}
+
+.gallery__cat_image:nth-of-type(7n + 2) {
+    grid-column: 2/4;
+}
+
+.gallery__cat_image:nth-of-type(7n + 3) {
+    grid-column: 1/2;
+}
+
+.gallery__cat_image:nth-of-type(7n + 4) {
+    grid-column: 2/3;
+}
+
+.gallery__cat_image:nth-of-type(7n + 5) {
+    grid-column: 3/4;
+}
+
+.gallery__cat_image:nth-of-type(7n + 6) {
+    grid-column: 1/3;
+}
+
+.gallery__cat_image:nth-of-type(7n + 7) {
+    grid-column: 3/4;
+}
+
+
+.gallery__cat_image:nth-of-type(7n + 8) {
+    grid-column: 1/4;
+}
+
+h2 {
+    color: red;
+}
+
+.stat {
+    background: lightgrey;
+    display: flex;
+    flex: 0.5 auto;
+    flex-direction: column;
+    padding-left: 20px;
+}
+
+.rate .rate_cat_type .rate_diagram {
+    display: inline-block;
+}
+
+.rate .rate_cat_type .rate_num {
+    display: flow;
+}
+
+.rate .rate_diagram {
+    height: 20px;
+}
+
+.rate .abyssinian .rate_diagram {
+    width: 200px;
+    background: linear-gradient(to right, limegreen, white);
+}
+
+.rate .british .rate_diagram {
+    width: 150px;
+    background: linear-gradient(to right, yellow, white);
+}
+
+.rate .russian_blue .rate_diagram {
+    width: 250px;
+    background: linear-gradient(to right, limegreen, white);
+}
+
+.rate .siamskaya .rate_diagram {
+    width: 100px;
+    background: linear-gradient(to right, red, white);
+}
+
+.rate {
+    display: flex;
+    flex-direction: column;
+}
+
+#sort-types:checked ~ .rate .russian_blue {
+    order: 1;
+}
+
+#sort-types:checked ~ .rate .abyssinian {
+    order: 2;
+}
+
+#sort-types:checked ~ .rate .british {
+    order: 3;
+}
+
+#sort-types:checked ~ .rate .siamskaya {
+    order: 4;
+}
+
+.rate_cat_type {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-content: center;
+}
+
+.rate_type_name {
+    width: 100%;
+}

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+  <style>
+
+
+      .vegetable__image {
+          position: absolute;
+          width: 20%;
+          top: 100px;
+          transform: translate(0, -50%);
+          background: red;
+      }
+
+      .vegetable__modal_controller {
+          position: absolute;
+          width: 20%;
+          top: 100px;
+          height: 100px;
+          opacity: 0.2;
+          background: red;
+      }
+
+      .vegetable__image:nth-of-type(1)
+      {
+          left: 20%;
+          transform: translate(-50%);
+      }
+      .vegetable__image:nth-of-type(2) {
+          left: 40%;
+          transform: translate(-50%);
+      }
+      .vegetable__image:nth-of-type(3) {
+          left: 60%;
+          transform: translate(-50%);
+      }
+      .vegetable__image:nth-of-type(4) {
+          left: 80%;
+          transform: translate(-50%);
+      }
+
+      .vegetable__image img {
+          object-fit: contain;
+          width: 100%;
+
+      }
+
+      .vegetable__image:hover + .vegetable__description {
+          display: block;
+      }
+
+      .vegetable__description {
+          position: absolute;
+          padding-top: 200px;
+          height: 400px;
+          z-index: -10;
+          display: none;
+      }
+
+      .vegetable__modal:checked ~ #modal {
+          position: fixed;
+          width: 100%;
+          height: 100%;
+          background: grey;
+          display: block;
+          opacity: 0.2;
+      }
+
+      .vegetable__modal:checked + .vegetable__image {
+          z-index: 21;
+          top: 50%;
+          left: 50%;
+      }
+
+      .vegetable__modal:checked ~ .vegetable__modal_controller:first-of-type {
+          background: purple;
+          position: fixed;
+          z-index: 23;
+          width: 2%;
+          height: 2%;
+          left: 98%;
+          display: block;
+      }
+      .vegetable__modal:checked ~ .vegetable__modal_controller:first-of-type:before {
+          content: 'X';
+      }
+
+
+  </style>
+</head>
+<body>
+<input id="vegetable__modal-1" type="checkbox" class="vegetable__modal" name="vegetable__modal-1">
+<img class="vegetable__image carousel" src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/ARS_cucumber.jpg/1280px-ARS_cucumber.jpg"
+     alt="cucumber">
+<label for="vegetable__modal-1" class="vegetable__modal_controller carousel"></label>
+<p class ="vegetable__description carousel">
+    Cucumber (Cucumis sativus) is a widely-cultivated creeping vine plant in the Cucurbitaceae gourd family
+    that bears usually cylindrical fruits, which are used as vegetables.[1] Considered an annual plant,[2]
+    there are three main varieties of cucumber — slicing, pickling, and burpless/seedless — within which
+    several cultivars have been created. The cucumber originates from South Asia, but now grows on most
+    continents, as many different types of cucumber are traded on the global market. In North America, the
+    term wild cucumber refers to plants in the genera Echinocystis and Marah, though the two are not closely
+    related.
+</p>
+
+<input id="vegetable__modal-2" type="checkbox" class="vegetable__modal" name="vegetable__modal-2">
+<img class="vegetable__image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a2/Vegetable-Carrot-Bundle-wStalks.jpg/2880px-Vegetable-Carrot-Bundle-wStalks.jpg"
+         alt="carrot">
+<label for="vegetable__modal-1" class="vegetable__modal_controller"></label>
+<p class="vegetable__description">The carrot (Daucus carota subsp. sativus) is a root vegetable, typically
+    orange in color, though
+    purple, black, red, white, and yellow cultivars exist,[2][3][4] all of which are domesticated forms
+    of the wild carrot, Daucus carota, native to Europe and Southwestern Asia. The plant probably
+    originated in Persia and was originally cultivated for its leaves and seeds. The most commonly eaten
+    part of the plant is the taproot, although the stems and leaves are also eaten. The domestic carrot
+    has been selectively bred for its greatly enlarged, more palatable, less woody-textured taproot.
+</p>
+<label for="vegetable__modal-2" class="vegetable__modal_controller carousel"></label>
+
+<input id="vegetable__modal-3" type="checkbox" class="vegetable__modal" name="vegetable__modal-3">
+<img class="vegetable__image" src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c2/Amanita_muscaria_%28fly_agaric%29.JPG/1280px-Amanita_muscaria_%28fly_agaric%29.JPG"
+     alt="mushroom">
+<label for="vegetable__modal-3" class="vegetable__modal_controller carousel"></label>
+<p class="vegetable__description">
+    A mushroom or toadstool is the fleshy, spore-bearing fruiting body of a fungus, typically produced above
+    ground, on soil, or on its food source.
+    The standard for the name "mushroom" is the cultivated white button mushroom, Agaricus bisporus; hence
+    the word "mushroom" is most often applied to those fungi (Basidiomycota, Agaricomycetes) that have a
+    stem (stipe), a cap (pileus), and gills (lamellae, sing. lamella) on the underside of the cap.
+    "Mushroom" also describes a variety of other gilled fungi, with or without stems, therefore the term is
+    used to describe the fleshy fruiting bodies of some Ascomycota. These gills produce microscopic spores
+    that help the fungus spread across the ground or its occupant surface.
+</p>
+
+<input id="vegetable__modal-4" type="checkbox" class="vegetable__modal" name="vegetable__modal-4">
+<img class="vegetable__image" src="https://upload.wikimedia.org/wikipedia/commons/2/25/Cauliflower.JPG" alt="cauliflower">
+<p class="vegetable__description">
+    Cauliflower is one of several vegetables in the species Brassica oleracea in the genus Brassica, which
+    is in the Brassicaceae (or Mustard) family. It is an annual plant that reproduces by seed. Typically,
+    only the head is eaten – the edible white flesh sometimes called "curd" (with a similar appearance to
+    cheese curd).[1] The cauliflower head is composed of a white inflorescence meristem. Cauliflower heads
+    resemble those in broccoli, which differs in having flower buds as the edible portion. Brassica oleracea
+    also includes broccoli, Brussels sprouts, cabbage, collard greens, and kale, collectively called "cole"
+    crops,[2] though they are of different cultivar groups.
+</p>
+<label for="vegetable__modal-4" class="vegetable__modal_controller carousel"></label>
+
+
+<div id="modal">
+</div>
+</body>
+</html>

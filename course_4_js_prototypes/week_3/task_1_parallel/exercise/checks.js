@@ -28,7 +28,9 @@ parallel(
 
     // Обработка результата выполнения операций (результирующий callback)
     function (errors, result) {
-        assert.deepEqual(errors, null);
+      // console.log("CALLBACK_1: " + result)
+
+      assert.deepEqual(errors, null);
         assert.deepEqual(result, ['500ms', '50ms', '200ms']);
 
         completeTest();
@@ -60,6 +62,7 @@ parallel(
         }
     ],
     function (error, results) {
+        // console.log("CALLBACK_2: " + error)
         assert.deepEqual(error, 'ERROR');
         assert.equal(results, null);
 

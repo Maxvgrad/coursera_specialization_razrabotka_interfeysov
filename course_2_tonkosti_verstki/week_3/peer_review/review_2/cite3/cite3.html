@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <link rel='stylesheet' href="cite3.css">
+        <title>Бабуленькины котятки</title>
+    </head>
+    <body>
+        <header class='page-header'>
+            <h1>Бабуленькины котятки</h1>
+        </header>
+        <main>
+            <div class="layout">
+                <input id='abyssinian_cat' type="radio" name="breed">
+                <input id='british_cat' type="radio" name="breed">
+                <input id='russian_cat' type="radio" name="breed">
+                <input id='siamese_cat' type="radio" name="breed">
+                <section class="nav">
+                    <label for='abyssinian_cat' class="nav_item">Абиссинская</label>
+                    <label for="british_cat" class="nav_item">Британская</label>
+                    <label for="russian_cat" class="nav_item">Русская голубая</label>
+                    <label for="siamese_cat" class="nav_item">Сиамская</label>
+                </section>
+                <section class="photos">
+                    <div class="photo_card abyssinian">
+                        <img src="img/aby1.jpg">
+                        <p class="cat_info">Лаура, 1 год</p>
+                    </div>
+                    <div class="photo_card british">
+                        <img src="img/bri1.jpg">
+                        <p class="cat_info">Фрэнк, 3 года</p>
+                    </div>
+                    <div class="photo_card siamese">
+                        <img src='img/siam1.jpg'>
+                        <p class="cat_info">Фрай, 4 года</p>
+                    </div>
+                    <div class="photo_card russian">
+                        <img src='img/rus1.jpg'>
+                        <p class="cat_info">Айвори, 2 года</p>
+                    </div>
+                    <div class="photo_card russian">
+                        <img src='img/rus3.jpg'>
+                        <p class="cat_info">Луиза, 2 года</p>
+                    </div>
+                    <div class="photo_card british">
+                        <img src='img/bri2.jpg'>
+                        <p class="cat_info">Шерри, 3 года</p>
+                    </div>
+                    <div class="photo_card siamese">
+                        <img src='img/siam2.jpg'>
+                        <p class="cat_info">Энтони, 1 год</p>
+                    </div>
+                    <div class="photo_card russian">
+                        <img src='img/rus2.jpg'>
+                        <p class="cat_info">Джон, 2 года</p>
+                    </div>
+                </section>
+                <aside class="rating">
+                    <h5 class="rating_head">Рейтинг</h5>
+                    <input id='sort' type="checkbox" name="sort">
+                    <label for="sort">по убыванию</label>
+                     <input type="text" name="rate-value" value='7'>
+                    <div class='rating-container'>
+                        <p>Абиссинская<p>
+                        <div class="rating_band"></div>
+                        <span class="cat_rate">7</span>
+                    </div>
+                    <input type="text" name="rate-value" value='10'>
+                    <div class='rating-container'>
+                        <p>Британская</p>
+                        <div class="rating_band"></div>
+                        <span class="cat_rate">10</span>
+                    </div>
+                    <input type="text" name="rate-value" value='5'>
+                    <div class='rating-container'>
+                        <p>Русская голубая</p>
+                        <div class="rating_band"></div>
+                        <span class="cat_rate">5</span>
+                    </div>
+                    <input type="text" name="rate-value" value='3'>
+                    <div class='rating-container'>
+                        <p>Сиамская</p>
+                        <div class="rating_band"></div>
+                        <span class="cat_rate">3</span>
+                    </div>
+                </aside>
+            </div>
+        </main>
+        <footer class="page-footer">
+            <section class='copyright'>
+                <div>&copy; OOO Бабуленькины котятки, 2020</div>
+            </section>
+            <section class='info'>
+                <div>Наш адрес: улица Котовая, д.5</div>
+            </section>
+        </footer>
+    </body>
+</html>

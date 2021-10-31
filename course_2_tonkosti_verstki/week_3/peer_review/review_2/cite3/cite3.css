@@ -1,0 +1,298 @@
+* {
+	box-sizing: inherit;
+	font-family: Arial;
+}
+html {
+    height: 100%;
+    width:100%;
+    min-width: 1300px;
+}
+
+body {
+    background-color: #e3e3e3;
+    padding: 0px;
+    margin: 0px;
+    display: flex;
+    min-height: 100%;
+    flex-direction: column;
+    justify-content: space-between;
+}
+
+header {
+    text-align: center;
+    text-decoration: underline;
+
+}
+
+footer {
+    display: flex;
+    padding: 20px;
+    justify-content: space-between;
+    text-align: center;
+    border-top: 1px solid #b3b3b3;
+    font-size: 14px;
+}
+
+section.info {
+    color: #5c5e9e;
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    margin: 10px;
+}
+
+input[type='radio'], input#sort, input[name="rate-value"] {
+    display: none;
+}
+
+#british_cat:not(:checked) ~ div.photo_card.british {
+    opacity: 0.3;
+}
+
+.nav {
+    background: #bfbfbf;
+    margin-right: 10px;
+    display: block;
+}
+
+.nav_item {
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.nav label {
+    
+    min-height: 40px;
+    text-align: center;
+    box-shadow: 0px 1px #b3b3b3;
+    border-bottom: 1px solid white;
+    list-style: none;
+}
+
+input#abyssinian_cat:checked ~ .nav > .nav_item[for='abyssinian_cat'], input#british_cat:checked ~ .nav > .nav_item[for='british_cat'], input#russian_cat:checked ~ .nav > .nav_item[for='russian_cat'], input#siamese_cat:checked ~ .nav > .nav_item[for='siamese_cat'] {
+    background-color: #595959;
+    color: #f2f2f2;
+}
+
+input#abyssinian_cat:checked ~ .photos > .photo_card:not(.abyssinian), input#british_cat:checked ~ .photos > .photo_card:not(.british), input#russian_cat:checked ~ .photos > .photo_card:not(.russian), input#siamese_cat:checked ~ .photos > .photo_card:not(.siamese) {
+    opacity: 0.3;
+}
+
+section.photos {
+    display: grid;
+    grid-template-areas: "a b b" "c d e" "f f j" "h h h";
+    overflow: hidden;
+    padding: 0px;
+    margin-top: -5px;
+}
+
+img {
+    display: block;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.photos div:nth-child(1) {
+    grid-area: a;
+}
+
+.photos div:nth-child(2) {
+    grid-area: b;
+}
+
+.photos div:nth-child(4) {
+    grid-area: c;
+}
+
+.photos div:nth-child(3) {
+    grid-area: d;
+}
+
+.photos div:nth-child(5) {
+    grid-area: e;
+}
+
+.photos div:nth-child(6) {
+    grid-area: f;
+}
+
+.photos div:nth-child(7) {
+    grid-area: j;
+}
+
+.photos div:nth-child(8) {
+    grid-area: h;
+}
+
+.photos div {
+    overflow: hidden;
+    margin: 5px;
+    max-width: 100%;
+}
+
+.rating_head {
+	text-transform: uppercase;
+	color: darkred;
+	margin: 5px auto 3px 10px;
+	font-size: 35px;
+	font-weight: 400;
+
+}
+
+
+.rating {
+	align-self: start;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    background: #bfbfbf;
+    margin-left: 0px;
+    
+}
+
+label[for='sort'] {
+	font-weight: 400;
+	cursor: pointer;
+	justify-self: end;
+	white-space: nowrap;
+}
+
+label[for='sort']::before {
+	/*content: '';*/
+	float: right;
+	border: 1px solid grey;
+    border-radius: 2px;
+	height: 20px;
+	width: 20px;
+	margin: 0 5px 0 5px;
+    position: relative;
+    background: #f5f5f5;
+
+}
+
+input#sort:checked + label::after {
+    content: '✔';
+}
+
+
+input#sort:checked ~ input[name='rate-value'][value='10'] + .rating-container {
+    order: 3;
+
+}
+
+input#sort:checked ~ input[name='rate-value'][value='7'] + .rating-container {
+    order: 4;
+
+}
+
+input#sort:checked ~ input[name='rate-value'][value='5'] + .rating-container {
+    order: 5;
+}
+
+input#sort:checked ~ input[name='rate-value'][value='3'] + .rating-container {
+    order: 6;
+}
+
+p.cat_info {
+	display: none;
+	position: absolute;
+	bottom:  15%;
+	height: 40px;
+	align-items: center;
+	color: white;
+	background-color: rgba(100, 100, 100, 0.6);
+	padding: 5px 15px;
+	margin: 0px;
+}
+
+div.photo_card:hover p.cat_info {
+	display: flex;
+}
+
+.photo_card {
+	position: relative;
+}
+
+.rating_band {
+	
+	height: 20px;
+	margin-left: 20px; 
+	border: 1px solid #bfbfbf;
+	display: inline-block;
+	
+}
+
+span.cat_rate {
+	float: right;
+	width: min-content;
+	margin-right: 10px;
+	font-weight: bold;
+}
+
+
+.rating p {
+	margin-left: 20px;
+}
+
+input[value='10'] + .rating-container .rating_band,
+input[value='9'] + .rating-container .rating_band {
+    background-image: linear-gradient(to right, #018f0b, white);   
+}
+
+input[value='8'] + .rating-container .rating_band,
+input[value='7'] + .rating-container .rating_band,
+input[value='6'] + .rating-container .rating_band,
+input[value='5'] + .rating-container .rating_band,
+input[value='4'] + .rating-container .rating_band {
+    background-image: linear-gradient(to right, #ebdb00, white);
+}
+
+input[value='3'] + .rating-container .rating_band,
+input[value='2'] + .rating-container .rating_band,
+input[value='1'] + .rating-container .rating_band{
+    background-image: linear-gradient(to right, #e64009, white);
+}
+
+
+
+input[value='0'] + .rating-container .rating_band{
+    background-color: white;
+    width: 100px;
+}
+
+input[value='10'] + .rating-container .rating_band {
+    width: 150px;
+}
+input[value='9'] + .rating-container .rating_band {
+    width: 135px;
+}
+input[value='8'] + .rating-container .rating_band {
+    width: 120px;
+}
+input[value='7'] + .rating-container .rating_band {
+    width: 105px;
+}
+input[value='6'] + .rating-container .rating_band {
+    width: 90px;
+}
+input[value='5'] + .rating-container .rating_band{
+    width: 75px;
+}
+input[value='4'] + .rating-container .rating_band {
+    width: 60px;
+}
+
+input[value='3'] + .rating-container .rating_band {
+    width: 45px;
+}
+input[value='2'] + .rating-container .rating_band {
+    width: 30px;
+}
+input[value='1'] + .rating-container .rating_band {
+    width: 15px;
+}

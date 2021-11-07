@@ -1,0 +1,276 @@
+html, body {
+    padding: 0;
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.btn-style {
+    border-radius: 50%;
+
+    background-color: #ffdb4a;
+    box-shadow: 1px 1px 1px rgba(255, 90, 0, .8);
+
+    cursor: pointer;
+}
+
+.btn-style:hover {
+    opacity: .8;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-weight: normal;
+}
+
+main {
+    min-width: 1018px;
+    padding: 18px;
+    box-sizing: border-box;
+}
+
+.container {
+    width: 982px;
+    margin: 0 auto;
+    background-color: #f6f5f3;
+    padding-bottom: 1px;
+}
+
+.logo {
+    display: flex;
+    justify-content: flex-end;
+}
+
+.logo #logo {
+    margin-right: 74px;
+}
+
+.carousel {
+    position: relative;
+    margin-top: 26px;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 660px;
+}
+
+.carousel .button-left, .carousel .button-right {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+
+    width: 60px;
+    height: 60px;
+}
+
+.carousel .button-left {
+    left: -90px;
+}
+
+.carousel .button-left::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    display: block;
+    width: 18px;
+    height: 27px;
+    background: url('images/css_sprites.png') -288px -114px;
+}
+
+.carousel .button-right {
+    right: -90px;
+}
+
+.carousel .button-right::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-39%, -50%);
+    display: block;
+    width: 18px;
+    height: 27px;
+    background: url('images/css_sprites.png') -113px -195px;
+}
+
+.carousel .item {
+    padding-left: 20px;
+}
+
+.carousel .text {
+    margin-top: 0;
+    margin-bottom: 38px;
+    font-size: 36px;
+    line-height: 43px;
+}
+
+.video {
+    position: relative;
+
+    margin-top: 50px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 641px;
+    height: 361px;
+
+    background: url(images/Video_snapshot.jpg) no-repeat;
+    background-size: cover;
+}
+
+.video .title {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    height: 50px;
+
+    font-size: 29px;
+    color: white;
+
+    background-color: rgba(41, 54, 60, .7);
+}
+
+.video .button-play {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+
+    width: 128px;
+    height: 128px;
+}
+
+.video .button-play::before {
+    content: '';
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-39%, -50%);
+    display: block;
+    width: 44px;
+    height: 58px;
+    background: url('images/css_sprites.png') -224px -114px;
+}
+
+.ways {
+    margin-top: 70px;
+}
+
+.ways .wrap-ways {
+    display: flex;
+    margin-left: 20px;
+}
+
+.ways > .header {
+    margin: 0 0 38px;
+    font-size: 47px;
+    line-height: 1;
+    text-align: center;
+}
+
+.ways .wrap-ways > article {
+    max-width: 220px;
+    flex-grow: 1;
+    margin-left: 20px;
+}
+
+.ways .wrap-ways > article .img {
+    position: relative;
+    height: 84px;
+    margin-bottom: 9px;
+}
+
+.ways .wrap-ways > article .img::before {
+    content: '';
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.ways .wrap-ways > article .title {
+    margin: 0 0 20px;
+    font-size: 30px;
+    line-height: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.ways .wrap-ways > article .text {
+    margin: 0;
+}
+
+#catalog .img::before {
+    width: 99px;
+    height: 84px;
+    background: url('images/css_sprites.png') -224px -10px;
+}
+
+#search .img::before {
+    width: 83px;
+    height: 84px;
+    background: url('images/css_sprites.png') -10px -195px;
+}
+
+#search .img::before {
+    width: 83px;
+    height: 84px;
+    background: url('images/css_sprites.png') -10px -195px;
+}
+
+#samples .img::before {
+    width: 194px;
+    height: 76px;
+    background: url('images/css_sprites.png') -10px -10px;
+}
+
+#easy_language .img::before {
+    width: 174px;
+    height: 69px;
+    background: url('images/css_sprites.png') -10px -106px;
+}
+
+.ways h2 {
+    font-size: 42px;
+    margin: 76px 0 65px;
+    line-height: 1;
+    text-align: center;
+}
+
+.ways .get-it {
+    position: relative;
+    display: block;
+    width: 320px;
+    height: 70px;
+    margin: 0 auto 66px;
+    border-radius: 6px;
+    border-style: none;
+    background: linear-gradient(to bottom, #ffe34a, #ffdb00);
+    cursor: pointer;
+}
+
+.ways .get-it span {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    color: rgba(0, 0, 0, .72);
+    font-size: 36px;
+}
+
+.ways .get-it span::before, .ways .get-it span::after {
+    color: rgba(255,255,255,.1);
+    position: absolute;
+}
+
+.ways .get-it span::before { top: 1px; left: 1px }
+.ways .get-it span::after  { top: 2px; left: 2px }
+
+.ways .get-it:hover {
+    background: linear-gradient(to bottom, #ffe86b, #ffe12f);
+}
+
+.ways .get-it:hover span::before, .ways .get-it:hover span::after {
+    content: 'Попробовать';
+    color: rgba(255,255,255,.1);
+    position: absolute;
+}

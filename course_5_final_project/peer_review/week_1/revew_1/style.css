@@ -1,0 +1,64 @@
+body {
+	font-family: Arial;
+	background-color: #cfd0cf;
+}
+
+.title {
+	line-height: 47px;
+	font-size: 42px;
+	margin: 40px;
+	text-align: center;
+	color: #434344;
+}
+
+.cards {
+	display: grid;
+	grid-template-rows: repeat(3, 1fr);
+	grid-template-columns: repeat(4, 1fr);
+	grid-gap: 25px;
+	width: min-content;
+	margin: 0 auto;
+}
+
+.card {
+	width: 130px;
+	height: 130px;
+	position: relative;
+	cursor: pointer;
+	perspective: 600px;
+	font-size: 75px;
+	user-select: none;
+}
+
+.card_back, .card_front {
+	border-radius: 9px;
+	position: absolute;
+	top: 0;
+	bottom: 0;
+	right: 0;
+	left: 0;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	-webkit-backface-visibility: hidden;
+	backface-visibility: hidden;
+	transition: transform 400ms;
+	box-shadow: 1px 1px 5px 0 #0008;
+}
+
+.card_back {
+	z-index: 1;
+	background: linear-gradient(45deg, #22ab93, #19668d);
+	border: 5px solid #fff; 
+}
+.card.flipped .card_back {
+	transform: rotateY(180deg);
+}
+
+.card_front {
+	transform: rotateY(180deg);
+	background-color: #fff;
+}
+.card.flipped .card_front {
+	transform: rotateY(360deg);
+}

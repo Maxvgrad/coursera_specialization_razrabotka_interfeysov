@@ -1,0 +1,132 @@
+@charset "UTF-8";
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #cfd0cf;
+}
+
+h1 {
+  margin: 40px auto;
+  color: #434344;
+  text-align: center;
+  font: bold 42px/47px Arial, sans-serif;
+}
+
+.playground {
+  width: 595px;
+  /* 130карточка 25между*/
+  margin: 0 auto;
+  display: -ms-grid;
+  display: grid;
+  -ms-grid-columns: (130px)[4];
+      grid-template-columns: repeat(4, 130px);
+  -ms-grid-rows: (130px)[3];
+      grid-template-rows: repeat(3, 130px);
+  grid-column-gap: 25px;
+  grid-row-gap: 25px;
+}
+
+.card {
+  position: relative;
+  float: left;
+  width: 130px;
+  height: 130px;
+  margin: 12.5px;
+  border: 5px solid white;
+  border-radius: 9px;
+  -webkit-box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+          box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  background: -webkit-gradient(linear, left bottom, right top, from(#22ab93), to(#19668d));
+  background: linear-gradient(to right top, #22ab93 0%, #19668d 100%);
+  -webkit-transform: perspective(600px);
+          transform: perspective(600px);
+  -webkit-transform-origin: center;
+          transform-origin: center;
+  -webkit-transform-style: preserve-3d;
+          transform-style: preserve-3d;
+  -webkit-transition: -webkit-transform 0.5s;
+  transition: -webkit-transform 0.5s;
+  transition: transform 0.5s;
+  transition: transform 0.5s, -webkit-transform 0.5s;
+  cursor: pointer;
+}
+
+.card__front {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -webkit-transform: rotateY(180deg);
+          transform: rotateY(180deg);
+  background-color: white;
+  text-align: center;
+  font-size: 75px;
+  line-height: 120px;
+}
+
+.card__back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.animation-front {
+  -webkit-animation: turn-front 1s ease-out forwards;
+          animation: turn-front 1s ease-out forwards;
+}
+
+@-webkit-keyframes turn-front {
+  0% {
+    -webkit-transform: perspective(600px);
+            transform: perspective(600px);
+  }
+  100% {
+    -webkit-transform: perspective(600px) rotateY(180deg);
+            transform: perspective(600px) rotateY(180deg);
+  }
+}
+
+@keyframes turn-front {
+  0% {
+    -webkit-transform: perspective(600px);
+            transform: perspective(600px);
+  }
+  100% {
+    -webkit-transform: perspective(600px) rotateY(180deg);
+            transform: perspective(600px) rotateY(180deg);
+  }
+}
+
+.animation-back {
+  -webkit-animation: turn-back 1s ease-out forwards;
+          animation: turn-back 1s ease-out forwards;
+}
+
+@-webkit-keyframes turn-back {
+  0% {
+    -webkit-transform: perspective(600px) rotateY(180deg);
+            transform: perspective(600px) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: perspective(600px);
+            transform: perspective(600px);
+  }
+}
+
+@keyframes turn-back {
+  0% {
+    -webkit-transform: perspective(600px) rotateY(180deg);
+            transform: perspective(600px) rotateY(180deg);
+  }
+  100% {
+    -webkit-transform: perspective(600px);
+            transform: perspective(600px);
+  }
+}

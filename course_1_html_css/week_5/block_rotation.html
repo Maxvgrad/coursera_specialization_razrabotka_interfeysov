@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .block {
+            background-color: red;
+            width: 150px;
+            height: 150px;
+            transition-property: background-color;
+            transition-duration: 1s;
+            animation-name: block-movements;
+            animation-timing-function: linear;
+            animation-duration: 3s;
+            animation-fill-mode: forwards;
+            animation-iteration-count: infinite;
+            animation-direction: alternate;
+        }
+
+        @keyframes block-right {
+            to {
+                transform: translate(100px, 0);
+            }
+        }
+
+        @keyframes block-movements {
+            0% {
+                transform: translate(0, 0);
+            }
+            25% {
+                transform: translate(100px, 0);
+            }
+            50% {
+                transform: translate(100px, 100%);
+            }
+            85%, 100% {
+                transform: translate(100px, 100%) scale(2) rotateZ(146deg);
+            }
+        }
+
+        .block:hover {
+            background-color: yellow;
+        }
+
+    </style>
+</head>
+
+<!--
+6. Добавьте линейную анимацию к пунктам 2, 3, 4 так, чтобы блок перемещался в течение 3 секунд постепенно и в конце элемент оставался в последней позиции.
+
+-->
+
+<body>
+<div class="block">&nbsp;</div>
+</body>
+</html>

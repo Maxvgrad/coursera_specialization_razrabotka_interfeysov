@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Бабуленькины котятки</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+  <header class="header">
+    <h1 class="header__title">Котятки Бабушкины</h1>
+  </header>
+  <main class="content">
+    <section class="menu">
+      <label class="menu__item" for="all">Все породы</label>
+      <label class="menu__item" for="karakal">Каракал</label>
+      <label class="menu__item" for="britain">Британская</label>
+      <label class="menu__item" for="mein-kun">Мейн-кун</label>
+    </section>
+    <section class="cards">
+      <input class="menu-radio input-all" type="radio" name="breed" id="all" checked>
+      <input class="menu-radio input-karakal" type="radio" name="breed" id="karakal">
+      <input class="menu-radio input-britain" type="radio" name="breed" id="britain">
+      <input class="menu-radio input-mein-kun" type="radio" name="breed" id="mein-kun">
+      <ul class="cards__list">
+        <li class="cards__item first britain">
+          <span class="cards__desc">Буба, 7 лет</span>
+          <img src="images/bk-1.jpg" alt="Британская">
+        </li>
+        <li class="cards__item second karakal">
+          <span class="cards__desc">Боба, 2 года</span>
+          <img src="images/kk-1.jpg" alt="Каракал">
+        </li>
+        <li class="cards__item third mein-kun">
+          <span class="cards__desc">Биба, 3 года</span>
+          <img src="images/mk-1.png" alt="Мейн-кун">
+        </li>
+        <li class="cards__item fourth britain">
+          <span class="cards__desc">Лупа, 5 месяцев</span>
+          <img src="images/bk-2.jpg" alt="Британская">
+        </li>
+        <li class="cards__item fifth karakal">
+          <span class="cards__desc">Пупа, 2 года</span>
+          <img src="images/kk-2.jpg" alt="Каракал">
+        </li>
+        <li class="cards__item sixth mein-kun">
+          <span class="cards__desc">Шустрик, 4 года</span>
+          <img src="images/mk-2.jpg" alt="Мейн-кун">
+        </li>
+        <li class="cards__item seventh karakal">
+          <span class="cards__desc">Барсик, 6 лет</span>
+          <img src="images/kk-3.jpg" alt="Каракал">
+        </li>
+        <li class="cards__item eighth mein-kun">
+          <span class="cards__desc">Кузя, 2 года</span>
+          <img src="images/mk-3.jpg" alt="Мейн-кун">
+        </li>
+      </ul>
+    </section>
+    <section class="rating">
+      <h2 class="rating__title">Рейтинг</h2>
+      <label for="sort" class="rating__label">по убыванию</label>
+      <input type="checkbox" name="sort" id="sort" class="rating__input">
+      <div class="rating__wrapper">
+        <div class="rating__item" data-value="9">
+          <label class="rating__name" for="one">Каракал</label>
+          <meter class="rating__bar" id="one" max="100" value="90"></meter>
+          <span class="rating__value">9</span>
+        </div>
+        <div class="rating__item" data-value="8">
+          <label class="rating__name" for="two">Мейн-кун</label>
+          <meter class="rating__bar" id="two" max="100" value="80"></meter>
+          <span class="rating__value">8</span>
+        </div>
+        <div class="rating__item" data-value="10">
+          <label class="rating__name" for="three">Британская</label>
+          <meter class="rating__bar" id="three" max="100" value="100"></meter>
+          <span class="rating__value">10</span>
+        </div>
+      </div>
+    </section>
+  </main>
+  <footer class="footer">
+    <div class="footer__inner">
+      <div class="footer__copyright">© ООО Бабушкины Котята, 2012</div>
+      <div class="footer__contacts">Наш адрес: улица Бабулина, д.15</div>
+    </div>
+  </footer>
+</body>
+
+</html>

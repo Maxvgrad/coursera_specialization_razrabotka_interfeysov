@@ -1,0 +1,450 @@
+<!DOCTYPE html>
+<!--<html lang="">-->
+<head>
+    <style>
+body
+{
+    display: flex;
+    flex-direction: column;
+
+    min-height: 100%;
+    margin: 0;
+    padding: 0 10px 0 20px;
+
+    font-family: Verdana, sans-serif;
+
+    background: #eee;
+}
+
+.aside-column
+{
+    font-size: 1.2em;
+
+    background: #c9c9c9;
+
+    flex: 0 0 20%;
+}
+
+.aside-column1
+{
+    font-size: 1.2em;
+
+    background: #c9c9c9;
+
+    flex: 0 0 20%;
+
+    height:400px;
+}
+
+.main-title
+{
+    margin: 0;
+    padding: 21px;
+
+    text-align: center;
+}
+
+.content
+{
+    display: flex;
+
+    margin-bottom: auto;
+
+    flex-wrap: wrap;
+}
+
+.breed-filter__control
+{
+    display: none;
+}
+
+.breed-filter__control:checked ~ .cats-list .cats-item
+{
+    opacity: .4;
+}
+
+.breed-filter__control:checked ~ .cats-list .cats-item .cats-item__info
+{
+    opacity: 0;
+}
+
+#select-breed-type-1:checked ~ .cats-list .breed-type-1,
+#select-breed-type-1:checked ~ .cats-list .breed-type-1:hover .cats-item__info,
+#select-breed-type-2:checked ~ .cats-list .breed-type-2,
+#select-breed-type-2:checked ~ .cats-list .breed-type-2:hover .cats-item__info,
+#select-breed-type-3:checked ~ .cats-list .breed-type-3,
+#select-breed-type-3:checked ~ .cats-list .breed-type-3:hover .cats-item__info,
+#select-breed-type-4:checked ~ .cats-list .breed-type-4,
+#select-breed-type-4:checked ~ .cats-list .breed-type-4:hover .cats-item__info
+{
+    opacity: 1;
+}
+
+.breed-filter__item
+{
+    display: block;
+
+    padding: 16px 12px;
+
+    cursor: pointer;
+
+    border-bottom: 1px solid #999;
+}
+
+.breed-filter__item:hover
+{
+    background: #bbb;
+}
+
+#select-breed-type-1:checked ~ .breed-filter label[for='select-breed-type-1'],
+#select-breed-type-2:checked ~ .breed-filter label[for='select-breed-type-2'],
+#select-breed-type-3:checked ~ .breed-filter label[for='select-breed-type-3'],
+#select-breed-type-4:checked ~ .breed-filter label[for='select-breed-type-4']
+{
+    color: #fff;
+    background: #555;
+}
+
+.breed-filter__control:checked ~ .breed-filter .breed-filter__item:hover
+{
+    background: #8c8c8c;
+}
+
+.cats-list
+{
+    display: flex;
+
+    box-sizing: border-box;
+    padding: 0 7px;
+
+    flex: 0 0 60%;
+    flex-wrap: wrap;
+}
+
+.cats-list article:nth-child(8n+1),
+.cats-list article:nth-child(8n+1),
+.cats-list article:nth-child(8n+3),
+.cats-list article:nth-child(8n+4),
+.cats-list article:nth-child(8n+5),
+.cats-list article:nth-child(8n+7)
+{
+    flex: 0 0 33.3%;
+}
+
+.cats-list article:nth-child(8n+2),
+.cats-list article:nth-child(8n+6)
+{
+    flex: 0 0 66.6%;
+}
+
+.cats-list article:nth-child(8n+8)
+{
+    flex: 0 0 100%;
+}
+
+.cats-item
+{
+    position: relative;
+
+    overflow: hidden;
+
+    box-sizing: border-box;
+    padding: 2px 4px;
+}
+
+.cats-item__img
+{
+    width: 100%;
+    height: 300px;
+
+    object-fit: cover;
+    object-position: 50% 0;
+}
+
+.cats-item__info
+{
+    position: absolute;
+    bottom: 30px;
+    left: 4px;
+
+    padding: 16px 8px;
+
+    opacity: 0;
+    color: #fff;
+    background: rgba(0, 0, 0, .6);
+}
+
+.cats-item:hover .cats-item__info
+{
+    opacity: 1;
+}
+
+.ratings
+{
+    box-sizing: border-box;
+    padding: 8px;
+}
+
+.ratings__title
+{
+    margin: 0;
+
+    font-weight: normal;
+
+    color: #f00;
+}
+
+.ratings__control-label,
+.ratings__control
+{
+    float: right;
+
+    font-size: .7em;
+}
+
+.ratings__list .ratings__item
+{
+    padding-top: 5px;
+
+    flex: 0 0 100%;
+}
+
+.ratings__list
+{
+    clear: right;
+}
+
+.rating
+{
+    position: relative;
+
+    box-sizing: border-box;
+    height: 1.2em;
+    padding-right: 36px;
+
+    text-align: left;
+
+    font-weight: bold;
+}
+
+.rating__name
+{
+    margin: 10px 0 5px;
+
+    font-weight: 400;
+}
+
+.rating:before
+{
+    display: inline-block;
+    
+
+    box-sizing: border-box;
+    height: 100%;
+
+    content: '';
+}
+
+.rating:after
+{
+    position: absolute;
+    top: 0;
+    right: 0;
+
+    content: attr(data-value);
+}
+
+.ratings__control:checked ~ .ratings__list
+{
+    display: flex;
+    flex-direction: column;
+}
+
+
+.ratings__item[data-value='4'] .rating:before
+{
+    border: 1px solid #f00;
+    background: linear-gradient(to right, #f00, #fff);
+}
+
+
+.ratings__item[data-value='8'] .rating:before
+{
+    border: 1px solid #ff0;
+    background: linear-gradient(to right, #ff0, #fff);
+}
+
+.ratings__item[data-value='9'] .rating:before,
+.ratings__item[data-value='10'] .rating:before
+{
+    border: 1px solid #0f0;
+    background: linear-gradient(to right, #0f0, #fff);
+}
+
+.ratings__item[data-value='1'] .rating:before
+{
+    width: 10%;
+}
+
+.ratings__item[data-value='4'] .rating:before
+{
+    width: 40%;
+}
+
+.ratings__item[data-value='4']
+{
+    order: 7;
+}
+
+.ratings__item[data-value='8'] .rating:before
+{
+    width: 80%;
+}
+
+.ratings__item[data-value='8']
+{
+    order: 3;
+}
+
+.ratings__item[data-value='9'] .rating:before
+{
+    width: 90%;
+}
+
+.ratings__item[data-value='9']
+{
+    order: 2;
+}
+
+.ratings__item[data-value='10'] .rating:before
+{
+    width: 100%;
+}
+
+.ratings__item[data-value='10']
+{
+    order: 1;
+}
+
+.footer
+{
+    display: flex;
+
+    box-sizing: border-box;
+    width: 100%;
+    margin-top: 20px;
+    padding: 16px 20px;
+
+    justify-content: space-between;
+}
+
+.footer:before
+{
+    position: absolute;
+    left: 0;
+
+    width: 100%;
+    margin-top: -16px;
+
+    content: '';
+
+    border-top: 1px solid #333;
+}
+
+.footer__contact
+{
+    font-style: normal;
+}
+
+</style>
+
+</head>
+<body>
+<header>
+    <h1 class="main-title">Бабуленькины Котятки</h1>
+</header>
+<main class="content">
+    <input type="checkbox" class="breed-filter__control" id="select-breed-type-1">
+    <input type="checkbox" class="breed-filter__control" id="select-breed-type-2">
+    <input type="checkbox" class="breed-filter__control" id="select-breed-type-3">
+    <input type="checkbox" class="breed-filter__control" id="select-breed-type-4">
+    <aside class="breed-filter aside-column">
+        <label class="breed-filter__item" for="select-breed-type-1">Абисская</label>
+        <label class="breed-filter__item" for="select-breed-type-2">Британская</label>
+        <label class="breed-filter__item" for="select-breed-type-3">Русская голубая</label>
+        <label class="breed-filter__item" for="select-breed-type-4">Сиамская</label>
+    </aside>
+    <section class="cats-list">
+        <article class="cats-item breed-type-1">
+            <img class="cats-item__img" src="https://catherineasquithgallery.com/uploads/posts/2021-03/1614547828_44-p-kotik-na-belom-fone-74.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Глен, 1 год</span>
+        </article>
+        <article class="cats-item breed-type-3">
+            <img class="cats-item__img" src="https://www.firestock.ru/download/s/02udyxcmfnrcajy/shutterstock_105663932.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Рафа, 1 год</span>
+        </article>
+        <article class="cats-item breed-type-2">
+            <img class="cats-item__img" src="https://thumbs.dreamstime.com/b/охотиться-и-и-заразите-ьный-ве-икобританский-серый-котенок-36314704.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Карло, 4 года</span>
+        </article>
+        <article class="cats-item breed-type-2">
+            <img class="cats-item__img" src="https://101hvost.ru/wp-content/uploads/2020/05/kak-nazvat-serogo-kotenka_1.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Мартин, 2 года</span>
+        </article>
+        <article class="cats-item breed-type-1">
+            <img class="cats-item__img" src="https://catherineasquithgallery.com/uploads/posts/2021-03/1614563702_33-p-kot-na-belom-fone-kartinki-58.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Фред, 3 года</span>
+        </article>
+        <article class="cats-item breed-type-3">
+            <img class="cats-item__img" src="https://www.firestock.ru/download/s/02udyxcmfnrcajy/shutterstock_105663932.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Рафа, 1 год</span>
+        </article>
+        <article class="cats-item breed-type-2">
+            <img class="cats-item__img" src="https://thumbs.dreamstime.com/b/охотиться-и-и-заразите-ьный-ве-икобританский-серый-котенок-36314704.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Карло, 4 года</span>
+        </article>
+        <article class="cats-item breed-type-4">
+            <img class="cats-item__img" src="https://w-dog.ru/wallpapers/6/0/493699675083568/kot-koshka-kotenok-polosatyj-belyj-fon.jpg"
+                 alt="Что на картинке" title="Имя кота">
+            <span class="cats-item__info">Дастин, 1 год</span>
+        </article>
+    </section>
+    <aside class="ratings aside-column1">
+        <h2 class="ratings__title">Рейтинг</h2>
+        <input class="ratings__control" id="select-sort-ratings" type="checkbox">
+        <label for="select-sort-ratings" class="ratings__control-label">по убыванию</label>
+        <div class="ratings__list">
+            <div class="ratings__item" data-value="9">
+                <h5 class="rating__name">Абисская</h5>
+                <div class="rating" data-value="9"></div>
+            </div>
+            <div class="ratings__item" data-value="8">
+                <h5 class="rating__name">Британская</h5>
+                <div class="rating" data-value="8"></div>
+            </div>
+            <div class="ratings__item" data-value="10">
+                <h5 class="rating__name">Русская голубая</h5>
+                <div class="rating" data-value="10"></div>
+            </div>
+            <div class="ratings__item" data-value="4">
+                <h5 class="rating__name">Сиамская</h5>
+                <div class="rating" data-value="4"></div>
+            </div>
+        </div>
+    </aside>
+</main>
+<footer class="footer">
+    &copy; Бабуленькины котятки, 2015
+    <address class="footer__contact">
+        <a href=''>Наш адрес: улица Котовая, д.5</a>
+    </address>
+</footer>
+</body>
+</html>

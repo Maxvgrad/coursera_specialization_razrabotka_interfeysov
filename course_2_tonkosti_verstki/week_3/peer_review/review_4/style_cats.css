@@ -1,0 +1,200 @@
+body{
+background-image: linear-gradient(-225deg, #E3FDF5 0%, #FFE6FA 100%);
+overflow: scroll;
+  padding: 0;
+  margin: 0;
+  max-width: 1800px;
+  vertical-align: top;
+}
+h2{
+   font-family: 'Bad Script', cursive;
+   font-size: 3em;
+  border-bottom: 2px solid #183533;
+  margin-top: 0px;
+} 
+h3{
+  display: block;
+  color: red;
+}
+form{
+  display: grid;
+  gap: 5px;
+  grid-template-columns: 150px 250px 250px 250px 250px 250px 250px 100px 300px 100px;
+  grid-template-rows: 150px 150px 150px 150px 150px 150px;  
+  min-height: 100vh;
+}
+
+ul{
+  width: 100px;
+  height: 700px;
+  flex-direction: column-reverse;
+ list-style-type: none;
+}
+img{
+  width: 100%;
+  height: 150px;
+}
+
+footer{
+  align-self: flex-end;
+  display: flex;
+  border-top: 2px solid #183533;
+  justify-content: space-between;
+  padding-top: 0px;
+}
+[type="radio"]{
+  display: none;
+}
+
+
+
+.first-column{
+        width: 400px;
+        height: 600px;
+		grid-column: 1/2;
+		grid-row: 2/4;
+}
+
+#check{align: right;}
+
+
+.second-column{
+        width: 800px;
+        height: 650px;
+        padding-left:50px;
+        grid-column: 2/5;
+		grid-row: 1/8;
+}
+
+.first-img{
+  grid-column: 2/3;
+  grid-row: 1/2;
+}
+.second-img{
+  grid-column: 3/5;
+  grid-row:1/2;
+}
+.third-img{
+  grid-column: 2/3;
+  grid-row: 2/3;
+}
+.fourth-img{
+ grid-column: 3/4;
+  grid-row: 2/3;
+}
+.fifth-img{
+  grid-column: 4/5;
+  grid-row: 2/3;
+}
+.sixth-img{
+grid-column: 2/4;
+grid-row: 3/4;
+}
+.seventh-img{
+ grid-column: 4/5;
+ grid-row: 3/4;
+}
+.eigth-img{
+  grid-column: 2/5;
+  grid-row: 4/5;
+}
+
+.first-column, .second-column{
+align-self: stretch;
+}
+
+.third-column ul{
+	display: grid;
+}
+.third-column{
+    padding-left: 100px;
+	display: grid;
+}
+.poroda{
+ width: 100px;
+ text-align: justify;
+
+}
+
+
+
+
+
+.good-rating{
+  border: solid green;
+  background-color: green;
+  width: 60px;
+  height: 1px;
+   grid-column: 8/9;
+ grid-row: 1/12;
+}
+.not-bad-rating{
+  border: solid green;
+  background-color: green;
+  width: 50px;
+  height: 1px;
+   grid-column: 8/9;
+ grid-row: 2/12;
+}
+.medium-rating{
+  border: solid Gold;
+  background-color: Gold;
+  width: 45px;
+  height: 1px;
+   grid-column: 8/9;
+ grid-row: 3/12;
+}
+.bad-rating{
+  border: solid red;
+  background-color: red;
+  width: 30px;
+  height: 1px;
+   grid-column: 8/9;
+ grid-row: 4/12;
+}
+.poroda-button li{
+  border-bottom: 1px solid black;
+}
+.poroda label { 
+cursor: pointer; 
+display: block;
+width: 100%;
+height: 100%;
+padding: 1em;
+border-bottom: 1px solid #fff;
+ }
+section > p {
+    display: none;
+    white-space: normal;
+}
+
+ section:hover > p {
+    display: inline;
+    position: relative;
+    left: 10px;
+    bottom: 30%;
+    width: 200px;
+     background: LightSteelBlue;
+    color: black;
+ }
+ 
+#ab:checked~section label:not([for="abis"]) img,
+#si:checked~section label:not([for="siam"]) img,
+#br:checked~section label:not([for="brit"]) img,
+#rb:checked~section label:not([for="rusg"]) img{
+  opacity: 0.2;
+}
+
+#ab:checked ~ .poroda-button label[for="ab"],
+#br:checked ~ .poroda-button label[for="br"],
+#rb:checked ~ .poroda-button label[for="rb"],
+#si:checked ~ .poroda-button label[for="si"]{
+opacity: 0.5;
+}
+#check:checked ~ ul > li[data-score="10"] {order: 4;}
+#check:checked ~ ul > li[data-score="9"] {order: 3;}
+#check:checked ~ ul > li[data-score="8"] {order: 2;}
+#check:checked ~ ul > li[data-score="4"] {order: 1;}
+#check:checked ~ ul { flex-direction: column-reverse; }        
+            
+            

@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="ru">
+  <head>
+    <meta charset="utf-8">
+    <title>Бабуленькины котятки</title>
+    <link rel="stylesheet" href="index.css">
+  </head>
+  <body>
+    <div class="wrapper">
+      <header class="header">
+        <h1>Бабуленькины котятки</h1>
+      </header>
+      <main class="main">
+        <input type="radio" name="cat-race" id="all-cats">
+        <input type="radio" name="cat-race" id="abyssinian">
+        <input type="radio" name="cat-race" id="british">
+        <input type="radio" name="cat-race" id="russian-blue">
+        <input type="radio" name="cat-race" id="siamese">
+        <nav class="navigation">
+          <label class="nav_item" for="all-cats">Все кошбки</label>
+          <label class="nav_item" for="abyssinian">Абиссинская</label>
+          <label class="nav_item" for="british">Британская</label>
+          <label class="nav_item" for="russian-blue">Русская голубая</label>
+          <label class="nav_item" for="siamese">Сиамская</label>
+        </nav>
+        <section class="photos">
+          <div class="photo abyssinian">
+            <img class="photo_image" src="img/abyssinian_1.jpg" alt="Абиссинская">
+            <p class="photo_info">Кристиан Бейл, 47 лет</p>
+          </div>
+
+          <div class="photo russian-blue">
+            <img class="photo_image" src="img/ru_blue_2.jpg" alt="Русская голубая">
+            <p class="photo_info">Васька, 1 год</p>
+          </div>
+
+          <div class="photo british">
+            <img class="photo_image" src="img/british_1.jpg" alt="Британская">
+            <p class="photo_info">Гоша, 3 года</p>
+          </div>
+
+          <div class="photo russian-blue">
+            <img class="photo_image" src="img/ru_blue_1.jpg" alt="Русская голубая">
+            <p class="photo_info">Петька, 1 месяц</p>
+          </div>
+
+          <div class="photo siamese">
+            <img class="photo_image" src="img/siamese_1.jpg" alt="Сиамская">
+            <p class="photo_info">Антон, 14 месяцев</p>
+          </div>
+
+          <div class="photo abyssinian">
+            <img class="photo_image" src="img/abyssinian_2.jpg" alt="Абиссинская">
+            <p class="photo_info">Евгений, 3 месяца</p>
+          </div>
+
+          <div class="photo siamese">
+            <img class="photo_image" src="img/siamese_2.jpg" alt="Сиамская">
+            <p class="photo_info">Акробат, 19 лет</p>
+          </div>
+
+          <div class="photo russian-blue">
+            <img class="photo_image" src="img/ru_blue_3.jpg" alt="Русская голубая">
+            <p class="photo_info">Шрек, 2 года</p>
+          </div>
+
+          <div class="photo british">
+            <img class="photo_image" src="img/british_2.jpg" alt="Британская">
+            <p class="photo_info">Керш, 4 года</p>
+          </div>
+
+          <div class="photo abyssinian">
+            <img class="photo_image" src="img/abyssinian_3.jpg" alt="Абиссинская">
+            <p class="photo_info">Марина, 4 месяца</p>
+          </div>
+
+          <div class="photo british">
+            <img class="photo_image" src="img/british_3.jpg" alt="Британская">
+            <p class="photo_info">Заур, 1 год</p>
+          </div>
+
+          <div class="photo siamese">
+            <img class="photo_image" src="img/siamese_3.jpg" alt="Сиамская">
+            <p class="photo_info">Калина, 7 лет</p>
+          </div>
+        </section>
+        <section class="rating">
+          <h2 class="rating-header">Рейтинг</h2>
+          <input type="checkbox" name="rate" id="desc">
+          <label for="desc">По убыванию</label>
+          <input type="text" name="race-rating" value="3">
+          <div class="race">
+            <p>Абиссинская</p>
+            <div class="race-rate">
+              <div class="race-rate-scale"></div>
+                <span class="race-rate-val">3</span>
+            </div>
+          </div>
+
+          <input type="text" name="race-rating" value="9">
+          <div class="race">
+            <p>Британская</p>
+            <div class="race-rate">
+              <div class="race-rate-scale"></div>
+                <span class="race-rate-val">9</span>
+            </div>
+          </div>
+
+          <input type="text" name="race-rating" value="7">
+          <div class="race">
+            <p>Русская голубая</p>
+            <div class="race-rate">
+              <div class="race-rate-scale"></div>
+                <span class="race-rate-val">7</span>
+            </div>
+          </div>
+
+          <input type="text" name="race-rating" value="4">
+          <div class="race">
+            <p>Сиамская</p>
+            <div class="race-rate">
+              <div class="race-rate-scale"></div>
+                <span class="race-rate-val">4</span>
+            </div>
+          </div>
+        </section>
+      </main>
+    </div>
+    <footer class="footer">
+      <p class="copyrights">&copy; ООО Бабуленькины котятки, 2015</p>
+      <address>
+        <a href="#">Наш адрес: улица Котовая, д.5</a>
+      </address>
+    </footer>
+  </body>
+</html>

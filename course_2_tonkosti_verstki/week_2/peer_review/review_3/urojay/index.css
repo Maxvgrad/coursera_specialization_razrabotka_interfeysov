@@ -1,0 +1,177 @@
+body
+{
+    margin: 0;
+}
+
+p
+{
+    text-align: center;
+    overflow: hidden;
+    visibility: hidden;
+}
+
+img
+{
+    width: 100%;
+    max-height: 75%;
+    vertical-align: middle;
+}
+
+section
+{
+    width: 20%;
+    margin-right: .25%;
+    height: 100%;
+    float: left;
+}
+
+.carousel-item
+{
+    width: 33.33%;
+    height: 100%;
+    float: left;
+}
+
+.carousel-wrapper
+{
+    position: relative;
+    padding-bottom: 30%;
+    overflow: hidden;
+}
+
+.carousel-items
+{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    width: 300%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    transition: left .5s ease-out;
+    -o-transition: left .5s ease-out;
+    -ms-transition: left .5s ease-out;
+    -moz-transition: left .5s ease-out;
+    -webkit-transition: left .5s ease-out;
+}
+
+.carousel-selector
+{
+    display: none;
+}
+
+.slide1:checked ~ .carousel-items
+{
+    left: 0;
+}
+
+.slide2:checked ~ .carousel-items
+{
+    left: -100%;
+}
+
+.slide3:checked ~ .carousel-items
+{
+    left: -200%;
+}
+
+label:hover ~ p
+{
+    opacity: 1;
+    visibility: visible;
+}
+
+.big-image img
+{
+    z-index: 10;
+    max-height: 100%;
+}
+
+.big-image
+{
+    display: none;
+    position: fixed;
+    z-index: 10;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    padding: 10vh 10vw;
+    background-color: rgba(128, 128, 128, .86);
+    text-align: center;
+    line-height: 80vh;
+}
+
+.switch
+{
+    display: none;
+}
+
+.switch:checked + .big-image
+{
+    display: block;
+}
+
+.cross
+{
+    position: absolute;
+    top: 10px;
+    right: 20px;
+    width: 40px;
+    height: 40px;
+}
+
+.cross:before,
+.cross:after
+{
+    content: '';
+    position: absolute;
+    left: 19px;
+    height: 40px;
+    display: block;
+    width: 2px;
+    background-color: white;
+}
+
+.cross:before
+{
+    -webkit-transform: rotate(45deg);
+    -ms-transform: rotate(45deg);
+    -o-transform: rotate(45deg);
+    transform: rotate(45deg);
+}
+
+.cross:after
+{
+    -webkit-transform: rotate(-45deg);
+    -ms-transform: rotate(-45deg);
+    -o-transform: rotate(-45deg);
+    transform: rotate(-45deg);
+}
+
+label.slide1Back,
+label.slide2Back,
+label.slide3Back
+{
+    width: 9%;
+    -webkit-transform: scale(.5);
+    -ms-transform: scale(.5);
+    -o-transform: scale(.5);
+    transform: scale(.5);
+    margin-top: 60px;
+    display: block;
+    float: left;
+}
+
+label.slide1,
+label.slide2,
+label.slide3
+{
+    width: 9%;
+    -webkit-transform: scale(.5);
+    -ms-transform: scale(.5);
+    -o-transform: scale(.5);
+    transform: scale(.5);
+    margin-top: 60px;
+    float: right;
+}

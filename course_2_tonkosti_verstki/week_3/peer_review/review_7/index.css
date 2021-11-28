@@ -1,0 +1,432 @@
+@import url(https://fonts.googleapis.com/css?family=PT+Sans:400,700);
+
+html{
+  box-sizing: border-box;
+  min-height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+
+body {
+  font-family: 'PT sans', Arial, sans-serif;
+  font-size: 1.2rem;
+  margin: 0;
+  padding: 0;
+  background-color: #ebebeb;
+}
+
+.wrapper{
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  width: 1300px;
+  margin: 0 auto;
+}
+
+.header{
+  text-align: center;
+}
+
+.main{
+  grid-row: 2 / 3;
+  display: grid;
+  grid-template-columns: 28px [nav] 210px 15px [main] 1fr 15px [rside] 230px 28px;
+  grid-template-rows: auto;
+}
+
+.main > input[name='cat-race'] {
+  display: none;
+}
+
+.navigation{
+  grid-column: nav;
+  background-color: #d9d9d9;
+}
+
+.nav_item{
+  display: block;
+  padding: 15px;
+  box-shadow: 0 1px 0 0 #fff, 0 2px 0 0 #8d8a8a;
+  cursor: pointer;
+}
+
+.nav_item:hover{
+  background-color: #888;
+}
+
+input[id='all-cats']:checked ~ .navigation > .nav_item[for='all-cats'],
+input[id='abyssinian']:checked ~ .navigation > .nav_item[for='abyssinian'],
+input[id='british']:checked ~ .navigation > .nav_item[for='british'],
+input[id='russian-blue']:checked ~ .navigation > .nav_item[for='russian-blue'],
+input[id='siamese']:checked ~ .navigation > .nav_item[for='siamese'] {
+  background-color: #5a5a5a;
+  color: #fff;
+}
+
+.photos{
+  grid-column: main;
+  display: grid;
+  grid-template-columns: [img1-start] 250px [img1-end] 12px [img2-start] 250px [img2-end] 12px [img3-start] 250px [img3-end];
+  grid-template-rows: auto;
+  margin-top: -12px;
+}
+
+.photo{
+  height: 250px;
+  overflow: hidden;
+  position: relative;
+  margin-top: 12px;
+}
+
+.photo:nth-of-type(8n + 1),
+.photo:nth-of-type(8n + 3){
+  grid-column: img1-start;
+}
+
+.photo:nth-of-type(8n + 4) {
+  grid-column: img2-start;
+}
+
+.photo:nth-of-type(8n + 5),
+.photo:nth-of-type(8n + 7) {
+  grid-column: img3-start;
+}
+
+.photo:nth-of-type(8n + 2) {
+  grid-column: img2-start / img3-end;
+}
+
+.photo:nth-of-type(8n + 6) {
+  grid-column: img1-start / img2-end;
+}
+
+.photo:nth-of-type(8n + 8) {
+  grid-column: img1-start / img3-end;
+}
+
+.photo:nth-of-type(8n + 2) > .photo_image {
+  position: relative;
+  height: auto;
+  left: 50%;
+  top: 25%;
+  transform: translate(-50%, -25%);
+}
+
+.photo:nth-of-type(8n + 6) > .photo_image {
+  position: relative;
+  height: auto;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.photo:nth-of-type(8n + 8) > .photo_image {
+  position: relative;
+  height: auto;
+  left: 50%;
+  top: 40%;
+  transform: translate(-50%, -40%);
+}
+
+.photo_info {
+  display: none;
+  position: absolute;
+  left: 0;
+  bottom: 25px;
+  padding: 15px 10px;
+  color: #fff;
+  background-color: rgba(0, 0, 0, .4);
+}
+
+.photo:hover > .photo_info {
+  display: block;
+}
+
+.photo_image{
+  width: 100%;
+  height: 100%;
+}
+
+#abyssinian:checked ~ .photos > .photo:not(.abyssinian),
+#british:checked ~ .photos > .photo:not(.british),
+#russian-blue:checked ~ .photos > .photo:not(.russian-blue),
+#siamese:checked ~ .photos > .photo:not(.siamese) {
+  -webkit-filter: grayscale(1) opacity(.75) blur(1px);
+  filter: grayscale(1) opacity(.75) blur(1px);
+}
+
+.rating{
+  grid-column: rside;
+  align-self: start;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+  background-color: #d9d9d9;
+  padding: 5px 15px 15px;
+}
+
+.rating > label[for='desc']{
+
+  margin-right: 20px;
+  position: relative;
+}
+
+.rating > label[for='desc']::before {
+  content: '';
+  position: absolute;
+  right: -20px;
+  top: 2px;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #666;
+  border-radius: 2px;
+  background: #eee;
+}
+
+.rating > label[for='desc']::after {
+  display: none;
+  content: '';
+  position: absolute;
+  top: -1px;
+  right: -25px;
+  width: 20px;
+  height: 8px;
+  border-left: 3px solid #000;
+  border-bottom: 3px solid #000;
+  transform: rotate(-45deg);
+}
+
+.rating input[name='rate']:checked + label[for='desc']::before {
+  background: linear-gradient(to bottom, #d1e9fc, #80c1f7);
+}
+
+.rating input[name='rate']:checked + label[for='desc']::after {
+  display: block;
+}
+
+.rating > input[name='rate'],
+.rating > input[name='race-rating'] {
+  display: none;
+}
+
+.rating-header {
+  text-transform: uppercase;
+  margin: 0;
+  color: #f00;
+  font-size: 2rem;
+  font-weight: normal;
+}
+
+.race {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto;
+}
+
+.race-rate {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto;
+  z-index: 1;
+}
+
+.race-rate-scale {
+  position: relative;
+  height: 20px;
+}
+
+.race-rate-val {
+  border: none;
+  padding: 0;
+  background-color: transparent;
+  max-width: 50px;
+  text-align: right;
+  font-weight: bold;
+}
+
+input[name='race-rating'][value='10'] + .race > .race-rate > .race-rate-scale,
+input[name='race-rating'][value='9'] + .race > .race-rate > .race-rate-scale
+{
+    background: linear-gradient(to right, #01e86e, #fff);
+}
+
+input[name='race-rating'][value='8'] + .race > .race-rate > .race-rate-scale,
+input[name='race-rating'][value='7'] + .race > .race-rate > .race-rate-scale,
+input[name='race-rating'][value='6'] + .race > .race-rate > .race-rate-scale,
+input[name='race-rating'][value='5'] + .race > .race-rate > .race-rate-scale
+{
+    background: linear-gradient(to right, #fff603, #fff);
+}
+
+input[name='race-rating'][value='4'] + .race > .race-rate > .race-rate-scale,
+input[name='race-rating'][value='3'] + .race > .race-rate > .race-rate-scale,
+input[name='race-rating'][value='2'] + .race > .race-rate > .race-rate-scale,
+input[name='race-rating'][value='1'] + .race > .race-rate > .race-rate-scale
+{
+    background: linear-gradient(to right, #e80802, #fff);
+}
+
+input[name='race-rating'][value='10'] + .race > .race-rate > .race-rate-scale
+{
+    width: 150px;
+}
+
+input[name='race-rating'][value='9'] + .race > .race-rate > .race-rate-scale
+{
+    width: 140px;
+}
+
+input[name='race-rating'][value='8'] + .race > .race-rate > .race-rate-scale
+{
+    width: 130px;
+}
+
+input[name='race-rating'][value='7'] + .race > .race-rate > .race-rate-scale
+{
+    width: 120px;
+}
+
+input[name='race-rating'][value='6'] + .race > .race-rate > .race-rate-scale
+{
+    width: 110px;
+}
+
+input[name='race-rating'][value='5'] + .race > .race-rate > .race-rate-scale
+{
+    width: 100px;
+}
+
+input[name='race-rating'][value='4'] + .race > .race-rate > .race-rate-scale
+{
+    width: 90px;
+}
+
+input[name='race-rating'][value='3'] + .race > .race-rate > .race-rate-scale
+{
+    width: 80px;
+}
+
+input[name='race-rating'][value='2'] + .race > .race-rate > .race-rate-scale
+{
+    width: 70px;
+}
+
+input[name='race-rating'][value='1'] + .race > .race-rate > .race-rate-scale
+{
+    width: 60px;
+}
+
+input[name='race-rating'][value='10'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='9'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='8'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='7'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='6'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='5'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='4'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='3'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='2'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='1'] + .race > .race-rate > .race-rate-scale::before
+{
+    content: '';
+    position: absolute;
+    bottom: -1px;
+    top: -1px;
+    left: -1px;
+    right: -1px;
+    z-index: -1;
+}
+
+input[name='race-rating'][value='10'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='9'] + .race > .race-rate > .race-rate-scale::before
+{
+    background: linear-gradient(to right, #00b153, #c2c3c3);
+}
+
+input[name='race-rating'][value='8'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='7'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='6'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='5'] + .race > .race-rate > .race-rate-scale::before
+{
+    background: linear-gradient(to right, #c3bc00, #c2c3c3);
+}
+
+input[name='race-rating'][value='4'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='3'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='2'] + .race > .race-rate > .race-rate-scale::before,
+input[name='race-rating'][value='1'] + .race > .race-rate > .race-rate-scale::before
+{
+    background: linear-gradient(to right, #b10400, #c2c3c3);
+}
+
+#desc:checked ~ input[name='race-rating'][value='10'] + .race
+{
+    order: 1;
+}
+
+#desc:checked ~ input[name='race-rating'][value='9'] + .race
+{
+    order: 2;
+}
+
+#desc:checked ~ input[name='race-rating'][value='8'] + .race
+{
+    order: 3;
+}
+
+#desc:checked ~ input[name='race-rating'][value='7'] + .race
+{
+    order: 4;
+}
+
+#desc:checked ~ input[name='race-rating'][value='6'] + .race
+{
+    order: 5;
+}
+
+#desc:checked ~ input[name='race-rating'][value='5'] + .race
+{
+    order: 6;
+}
+
+#desc:checked ~ input[name='race-rating'][value='4'] + .race
+{
+    order: 7;
+}
+
+#desc:checked ~ input[name='race-rating'][value='3'] + .race
+{
+    order: 8;
+}
+
+#desc:checked ~ input[name='race-rating'][value='2'] + .race
+{
+    order: 9;
+}
+
+#desc:checked ~ input[name='race-rating'][value='1'] + .race
+{
+    order: 10;
+}
+
+.footer {
+  display: grid;
+  grid-template-columns: 28px [copy] 1fr 15px [rside] 230px 28px;
+  grid-template-rows: auto;
+  align-items: center;
+  margin-top: 15px;
+  border-top: 1px solid #000;
+}
+
+.copyrights {
+  grid-column: copy;
+}
+
+.footer > address {
+  grid-column: rside;
+}

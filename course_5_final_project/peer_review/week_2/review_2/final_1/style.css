@@ -1,0 +1,108 @@
+html, body {
+    padding: 0;
+    margin: 0;
+}
+
+.main {
+    position: absolute;
+    display: flex;
+    flex-direction: column;
+    min-height: 600px;
+    min-width: 600px;
+    height: 100%;
+    width: 100%;
+    padding: 0;
+    margin: 0;
+    background-color: #CFD0CF;
+}
+
+.main__header {
+    font: normal 42px Arial, Helvetica, sans-serif;
+    color: #434344;
+    text-align: center;
+    margin: 40px;
+}
+.board {
+    align-self: center;
+    display: grid;
+    grid-template-columns: repeat(4, 130px);
+    grid-template-rows: repeat(3, 130px);
+    grid-gap: 25px;
+    margin-bottom: 40px;
+}
+
+.board__card {
+    width: 100%;
+    height: 100%;
+    perspective: 600px;
+}
+
+input {
+    display: none;
+}
+
+.card__click {
+    position:absolute;
+    top:0;
+    left:0;
+    height:100%;
+    width:100%;
+    cursor:pointer;
+    z-index: 2;
+}
+
+.click:checked ~ .card__flip {
+    transform: rotateY(180deg);
+}
+
+.card__flip {
+    position: relative;
+    border-radius: 9px;
+    width: 100%;
+    height: 100%;
+    box-shadow: 1px 1px 5px rgba(0.0, 0.0, 0.0, 0.5);
+    transform-style: preserve-3d;
+    -webkit-transform-style: preserve-3d;
+    transition: all 0.4s ease;
+    -webkit-transition: all 0.7s ease;
+    box-sizing: border-box;
+}
+
+
+.card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    text-align: center;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    -webkit-backface-visibility: hidden;
+    border: solid 5px #fff;
+    border-radius: 9px;
+    box-sizing: border-box;
+}
+
+.on {
+    background-color: white;
+    transform: rotateY(-180deg);
+    font-size: 75px;
+}
+
+.off {
+    transform: rotateY(0);
+    background: linear-gradient(45deg, #22AB93, #19668D);
+}
+
+.matched {
+    background-color: #5AD66F;
+    border-color: #5AD66F;
+}
+
+.no-matched {
+    background-color: #F44336;
+    border-color: #F44336;
+}

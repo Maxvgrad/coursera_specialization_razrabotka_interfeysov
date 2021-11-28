@@ -67,3 +67,13 @@ h1 {
 .card.flipped .card-back {
     transform: rotateY(180deg);
 }
+
+.match {
+    background: #5ad66f;
+    border-color: #5ad66f;
+}
+
+.miss {
+    background: #f44336;
+    border-color: #f44336;
+}

@@ -77,3 +77,56 @@ h1 {
     background: #f44336;
     border-color: #f44336;
 }
+
+/*Week 3: Timer*/
+
+.timer {
+    font-size: 32px;
+    font-family: Arial, serif;
+    color: #434344;
+    text-align: center;
+    margin-top: 30px;
+}
+
+.game__result_modal {
+    display: none;
+    position: absolute;
+    left: 50%;
+    top: 50%;
+    background-color: white;
+    width: 400px;
+    height: 188px;
+    transform: translate(-50%, -50%);
+}
+
+.game__result_text {
+    font-size: 48px;
+    font-family: Arial, serif;
+    color: #434344;
+    font-style: normal;
+    text-align: center;
+    margin-top: 30px;
+    margin-bottom: 40px;
+}
+
+.game__reset_action {
+    position: absolute;
+    background: linear-gradient(90deg, #19668d, #22ab93);
+    left: 50%;
+    transform: translate(-50%);
+    border-radius: 10px;
+    padding: 0;
+}
+
+.game__reset_action_text {
+    font-family: Arial, serif;
+    font-size: 29px;
+    font-style: normal;
+    color: white;
+    text-align: center;
+    margin: 0 30px;
+}
+
+.display {
+    display: block;
+}

@@ -1,0 +1,66 @@
+*, body {
+    background-color: #CFD0CF;
+    text-align: center;
+}
+
+h1 {
+    font-size: 42px;
+    margin: 40px 0;
+    line-height: 47px;
+    text-align: center;
+    font-family: Arial, Helvetica, sans-serif;
+    color: #434344;
+}
+
+.game {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 595px;
+    margin: 0 auto;
+}
+
+.game__card__shirt, .game__card__front_side {
+    position: absolute;
+    display: flex;
+    float: left;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    background-color: #fff;
+    border: 5px solid #fff;
+    border-radius: 9px;
+    box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+    backface-visibility: hidden;
+    transition: 0.5s;
+}
+
+.game__card {
+    position: relative;
+    height: 120px;
+    width: 120px;
+    margin-bottom: 25px;
+    perspective: 600px;
+    cursor: pointer;
+}
+
+.game__card__front_side {
+    position: absolute;
+    background-color: #fff;
+    font-size: 75px;
+    transform: rotateY(180deg);
+}
+
+.game__card__shirt {
+    background: linear-gradient(-45deg, #22ab93, #19668d);
+}
+
+
+.open-card .game__card__front_side {
+    transform: rotateY(360deg);
+}
+
+.open-card .game__card__shirt {
+    transform: rotateY(180deg);
+}

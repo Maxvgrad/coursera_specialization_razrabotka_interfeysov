@@ -1,0 +1,92 @@
+*{
+  margin:0;
+  padding:0;
+  box-sizing:border-box;
+}
+
+body{
+  background-color:#CFD0CF
+  }
+  
+h1{
+  font-family:Arial,sans-serif;
+  line-height:47px;
+  font-size:42px;
+  text-align:center;
+  margin:40px;
+  color:#434344;
+}
+.playfield{
+  display:flex;
+  flex-wrap: wrap;
+  width:640px;
+  margin: 0 auto;
+  perspective:600px;
+}
+
+.card{
+  width: 130px;
+  height: 130px;
+  position:relative;
+  border:5px solid white;
+  border-radius:9px;
+  box-shadow:1px 1px 5px  rgba(0,0,0,0.5);
+  margin-left:25px;
+  margin-bottom:25px;
+  -webkit-transition: -webkit-transform 0.5s;
+  -moz-transition: -moz-transform 0.5s;
+  -o-transition: -o-transform 0.5s;
+  transition: transform 0.5s;
+  -webkit-transform-style: preserve-3d;
+  -moz-transform-style: preserve-3d;
+  -o-transform-style: preserve-3d;
+  transform-style: preserve-3d;
+ cursor:pointer;
+}
+
+.card div {
+    display: block;
+    height: 100%;
+    width: 100%;
+    position:absolute;
+    color: white;
+    text-align: center;
+    font-weight: bold;
+    font-size: 24px;
+    -webkit-backface-visibility: hidden;
+    -moz-backface-visibility: hidden;
+    -o-backface-visibility: hidden;
+    backface-visibility: hidden;
+}
+
+.back p{
+  font-size:75px;
+  line-height:120px;
+  text-align:center;
+  margin:0 auto;
+}
+
+.card .front {
+ background-image:linear-gradient(to top right,#22AB93,#19668D);
+}
+  
+.card .back {
+  background: #fff;
+  color:#111;
+  -webkit-transform: rotateY( 180deg );
+   -moz-transform: rotateY( 180deg );
+   -o-transform: rotateY( 180deg );
+   transform: rotateY( 180deg );
+   transition:background 500ms;
+   transition-delay:0ms;
+}
+
+.card.flipped {
+    -webkit-transform: rotateY( 180deg );
+    -moz-transform: rotateY( 180deg );
+    -o-transform: rotateY( 180deg );
+    transform: rotateY( 180deg );
+}
+
+
+

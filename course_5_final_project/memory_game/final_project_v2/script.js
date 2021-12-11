@@ -2,13 +2,16 @@
 
 class Game {
   constructor() {
-    this.flippedCards = []
     this.board = new Board(document.querySelector('.board'))
+    this.timer = new Timer(60);
+    this.modal = new Modal();
   };
 
   setUpGame() {
     this._populateEmojis();
+    this.timer.start()
     this.board.addHandlerToCards(handlerWrapper(this._handleClick, this))
+    this.modal.addHandlerToR(handlerWrapper(this._handleClick, this))
   }
 
   _populateEmojis() {
@@ -147,6 +150,88 @@ class Card {
 
   _getCardFront() {
     return this._card.children[1];
+  }
+}
+
+class Timer {
+    constructor(seconds) {
+      this.timer_ = document.querySelector('.timer');
+      this.clockId = null;
+      this.seconds = seconds
+    }
+
+    start() {
+      const seconds = this.seconds
+      this._setSeconds(seconds);
+      const timer = this;
+      if (!this.clockId) {
+        this.clockId = setInterval(function () {
+          if (timer.isTimeElapsed()) {
+            timer.stop();
+            return;
+          }
+          timer._decrement();
+        }, 1000)
+      }
+    }
+    stop() {
+      clearInterval(this.clockId);
+      this.clockId = null;
+    };
+    _decrement() {
+      let seconds = this.getSeconds();
+      this._setSeconds(--seconds);
+    }
+    getSeconds() {
+      const timer = this.timer_
+      if (timer.innerHTML === '01:00') {
+        return 60;
+      } else {
+        return Number(timer.innerHTML.split(':')[1]);
+      }
+    }
+    _setSeconds(seconds) {
+      const timer = this.timer_
+      let secondsStr;
+      if (seconds === 60) {
+        secondsStr = '01:00';
+      } else {
+        let prefix = '00:';
+        if (seconds < 10) {
+          prefix += '0'
+        }
+        secondsStr = prefix + seconds
+      }
+      timer.innerHTML = secondsStr;
+    }
+    isTimeElapsed() {
+      return this.getSeconds() <= 0;
+    }
+}
+
+class Modal {
+  constructor() {
+    this.gameResult = document.querySelector('.game__result_text');
+    this.action = document.querySelector('.game__reset_action_text');
+    this.modal = document.querySelector('.game__result_modal');
+    this.actionButton = document.querySelector('.game__reset_action');
+  }
+  display(result, actionText, actionHandler) {
+    const gameResult = this.gameResult;
+    gameResult.innerHTML = result;
+    const action = this.action;
+    action.innerHTML = actionText;
+    const modal = this.modal;
+    modal.classList.add('display');
+    this.actionButton.addEventListener('click', actionHandler(), true);
+  }
+  hide() {
+    const modal = this.modal;
+    modal.classList.remove('display');
+    // Clear event listener
+    const old_element = this.actionButton;
+    const new_element = old_element.cloneNode(true);
+    old_element.parentNode.replaceChild(new_element, old_element);
   }
 }
 

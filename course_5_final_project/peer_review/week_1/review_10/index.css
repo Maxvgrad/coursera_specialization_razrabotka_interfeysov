@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    background-color: #CFD0CF;
+}
+
+.header {
+    text-align: center;
+    padding: 48px 0;
+
+    color: #434344;
+    font-size: 47px;
+    font-family: Arial, serif;
+}
+
+.wrapper {
+    display: grid;
+    grid-template-columns: repeat(4, 135px);
+    grid-template-rows: repeat(3, 135px);
+    grid-column-gap: 25px;
+    grid-row-gap: 25px;
+
+    margin: auto;
+    width: 615px;
+
+    perspective: 600px;
+}
+
+.card {
+    position: relative;
+
+    cursor: pointer;
+
+    font-size: 75px;
+    border: 5px solid white;
+    border-radius: 9px;
+
+    transition: transform 0.6s;
+    transform-style: preserve-3d;
+}
+
+.card.flip {
+    transform: rotateY(180deg);
+}
+
+.front-side,
+.back-side {
+    position: absolute;
+
+    width: 100%;
+    height: 100%;
+
+    backface-visibility: hidden;
+}
+
+.front-side {
+    background: linear-gradient(to top right, #22AB93, #19668D);
+}
+
+.back-side {
+    text-align: center;
+    line-height: 125px;
+
+    background-color: white;
+
+    transform: rotateY(180deg);
+}
+
+.flip-card {
+    width: 200px;
+    height: 200px;
+    perspective: 600px; /* Remove this if you don't want the 3D effect */
+}
+
+/* This container is needed to position the front and back side */
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    transition: transform 2s;
+    transform-style: preserve-3d;
+}
+
+/* Do an horizontal flip when you move the mouse over the flip box container */
+.flip-card:hover .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+/* Position the front and back side */
+.flip-card-front, .flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    -webkit-backface-visibility: hidden; /* Safari */
+    backface-visibility: hidden;
+}
+
+/* Style the front side (fallback if image is missing) */
+.flip-card-front {
+    background-color: #bbb;
+    color: black;
+}
+
+/* Style the back side */
+.flip-card-back {
+    background-color: dodgerblue;
+    color: white;
+    transform: rotateY(180deg);
+}

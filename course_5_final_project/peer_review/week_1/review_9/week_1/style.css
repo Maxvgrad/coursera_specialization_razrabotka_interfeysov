@@ -1,0 +1,109 @@
+*{margin:0; padding:0;}
+
+html{
+	font-size:62.5%; /* 10px rem */
+	background-color: #CFD0CF;
+}
+
+	body{
+	}
+
+		h1{
+			margin: 40px 0;
+			text-align: center;
+			font-size: 42px;
+			line-height: 1.1191; /*47px*/
+			color: #434344;
+			font-family: Arial, sans-serif;
+		}
+
+		.game_wrapper{
+			max-width: 595px;
+			margin: 0 auto;
+		}
+
+			.game{
+				margin-bottom: -4.20168067226891%;
+
+				display: flex;
+				flex-wrap: wrap;
+				justify-content:space-between;
+				align-content: center;
+			}
+
+				.flipcard{
+					position: relative;
+					width: 21.84874%;
+					padding-top: 21.84874%;
+					margin-bottom: 4.20168067226891%;
+
+					border-radius: 9px;
+
+					perspective: 600px;
+				}
+					
+					.flipcard.active .back{
+						transform: rotateY(0);
+					}
+
+					.flipcard.active .front{
+						transform: rotateY(180deg);
+					}
+
+
+					.front, .back{
+						position: absolute;
+						top: 0;
+						left: 0;
+						right: 0;
+						bottom: 0;
+
+						border-radius: 9px;
+						box-shadow: 1px 1px 5px rgb(0,0,0,0.5);
+
+						backface-visibility: hidden;
+						transition: transform .4s;
+					}
+
+					.front{
+						box-sizing: border-box;
+						border-width: 5px;
+						border-color: white;
+						border-style: solid;
+
+						background: linear-gradient(to top right, #22AB93, #19668D);
+					}
+
+					.back{
+						display: flex;
+
+						text-align: center;
+						font-size: 75px;
+
+						background-color: white;
+
+						transform: rotateY(-180deg);
+					}
+
+						.back span{
+							margin: auto;
+						}
+
+
+@media (max-width: 595px) {
+
+	h1{
+		font-size: 7.0588vw;
+	}
+
+	.back{
+		font-size: 11.092437vw;
+	}
+
+}
+
+@media (max-width: 480px) {
+	.front{
+		border-width: 3px;
+	}
+}

@@ -3,31 +3,69 @@
 class Game {
   constructor() {
     this.board = new Board(document.querySelector('.board'))
+    this.board.addHandlerToCards(handlerWrapper(this._handleClick, this))
     this.timer = new Timer(60);
     this.modal = new Modal();
+    this._stop();
+    this.gameRunnerId = setInterval(() => this._evaluateState.bind(this)(), 1000);
   };
 
   setUpGame() {
-    this._populateEmojis();
-    this.timer.start()
-    this.board.addHandlerToCards(handlerWrapper(this._handleClick, this))
-    this.modal.addHandlerToR(handlerWrapper(this._handleClick, this))
+    this.board.reset();
+    this._start();
   }
 
-  _populateEmojis() {
-    const emojis = ["🐱", "🦄", "🐷", "🐸", "🐙", "🐟"]
-    const shuffledEmojis = shuffle([...emojis, ...emojis])
-    const cardsBack = document.querySelectorAll('.card-front');
-    for (let i = 0; i < cardsBack.length; i++) {
-      cardsBack[i].innerHTML = shuffledEmojis[i];
+  _tryAgain() {
+    this.board.reset();
+    this.modal.hide();
+    this._start();
+  }
+
+  isProcessing() {
+    return this.state === 'PROCESSING'
+  }
+
+  isWin() {
+    return this.board.isAllCardsMatch();
+  }
+
+  win() {
+    this._stop();
+    this.modal.display('Win', handlerWrapper(this._tryAgain, this), "Play again");
+  }
+
+  loose() {
+    this._stop();
+    this.modal.display('Loose', handlerWrapper(this._tryAgain, this), "Try again");
+  }
+
+  _stop() {
+    this.state = 'STOPPED';
+    this.timer.stop();
+  }
+
+  _start() {
+    this.state = 'PROCESSING';
+    this.timer.start();
+  }
+
+  _evaluateState() {
+    if (!this.isProcessing()) {
+      return;
+    }
+    if (this.isWin()) {
+      this.win();
+    } else if (this.timer.isTimeElapsed()) {
+      this.loose();
     }
   }
 
   _handleClick(card) {
+    if (!this.isProcessing()) {
+      return;
+    }
     const wasClickOnMissedCard = card.isMissed();
-
     this.board.flipMissingCards();
-
     if (card.isMatched() || wasClickOnMissedCard) {
       return;
     }
@@ -67,6 +105,7 @@ class Board {
       cardsObjs.push(card);
     }
     this._cards = cardsObjs;
+    this.emojis = ["🐱", "🦄", "🐷", "🐸", "🐙", "🐟"]
   }
   addHandlerToCards(handler) {
     this._cards.forEach(card => {
@@ -83,10 +122,28 @@ class Board {
     })
   }
 
+  isAllCardsMatch() {
+    return this._cards.every(c => c.isMatched());
+  }
+
   getFlippedCard() {
     return this._cards.filter(card => {
       return card.isFlipped();
     });
+  }
+
+  reset() {
+    this._cards.forEach(card => {
+      card.reset();
+    })
+    this._populateEmojis()
+  }
+
+  _populateEmojis() {
+    const shuffledEmojis = shuffle([...this.emojis, ...this.emojis])
+    this._cards.forEach((card, index) => {
+      card.setEmoji(shuffledEmojis[index]);
+    })
   }
 }
 
@@ -146,6 +203,10 @@ class Card {
 
   getEmoji() {
     return this._getCardFront().innerHTML;
+  }
+
+  setEmoji(emoji) {
+    this._getCardFront().innerHTML = emoji;
   }
 
   _getCardFront() {
@@ -216,7 +277,7 @@ class Modal {
     this.modal = document.querySelector('.game__result_modal');
     this.actionButton = document.querySelector('.game__reset_action');
   }
-  display(result, actionText, actionHandler) {
+  display(result, actionHandler, actionText) {
     const gameResult = this.gameResult;
     gameResult.innerHTML = result;
     const action = this.action;
@@ -229,9 +290,10 @@ class Modal {
     const modal = this.modal;
     modal.classList.remove('display');
     // Clear event listener
-    const old_element = this.actionButton;
-    const new_element = old_element.cloneNode(true);
-    old_element.parentNode.replaceChild(new_element, old_element);
+    const oldElement = this.actionButton;
+    const newElement = oldElement.cloneNode(true);
+    oldElement.parentNode.replaceChild(newElement, oldElement);
+    this.actionButton = newElement;
   }
 }
 

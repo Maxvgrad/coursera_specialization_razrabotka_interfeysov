@@ -1,0 +1,102 @@
+html,
+body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  background-color: #cfd0cf;
+}
+
+h1 {
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 42px;
+  line-height: 47px;
+  color: #434344;
+
+  margin-top: 0;
+  padding-top: 40px;
+  margin-bottom: 40px;
+}
+
+.cards-field {
+  margin: 0 auto;
+  width: 595px;
+}
+
+.margin-wrapper {
+  margin: -12.5px;
+  overflow: hidden;
+  transform: perspective(600px);
+}
+
+.cards-field .card {
+  width: 130px;
+  height: 130px;
+  float: left;
+  margin: 12.5px;
+  border-radius: 9px;
+  box-shadow: 1px 1px 5px rgba(0, 0, 0, 0.5);
+  box-sizing: border-box;
+  transition: transform 0.5s;
+  transform-origin: center;
+  transform-style: preserve-3d;
+  position: relative;
+  transform: perspective(600px);
+  cursor: pointer;
+  transition: all 475ms;
+}
+
+.cards-field .card.coincidence .card-front {
+  background-color: #5ad66f;
+}
+
+.cards-field .card.not-coincidence .card-front {
+  background-color: #f44336;
+}
+
+.cards-field .card .card-front,
+.cards-field .card .card-back {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+
+  box-sizing: border-box;
+  border-radius: 9px;
+
+  transition: all 475ms;
+
+  pointer-events: none;
+}
+
+.cards-field .card .card-front {
+  background-color: white;
+  transform: rotateY(180deg);
+  font-size: 75px;
+  text-align: center;
+  line-height: 130px;
+}
+
+.cards-field .card .card-back {
+  background: linear-gradient(to right top, #22ab93 0%, #19668d 100%);
+  /* background-color: rgba(0, 0, 0, 0.5); */
+  border: 5px solid white;
+}
+
+.cards-field .card:hover .card-back {
+  filter: contrast(2);
+}
+
+.cards-field .card.face {
+  transform: perspective(600px) rotateY(180deg);
+  cursor: initial;
+}
+
+.cards-field .card.face.isCoincidence .card-front {
+  background: #5ad66f;
+}
+
+.cards-field .card.face.isNotCoincidence .card-front {
+  background: #f44336;
+}

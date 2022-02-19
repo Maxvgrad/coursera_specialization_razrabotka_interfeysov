@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="page.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100;900&display=swap" rel="stylesheet">
+    <title>Приют "Пушистые Лапки"</title>
+</head>
+
+<body>
+    <header>
+        <h1 class="main_header">Приют "Братство Когтей"</h1>
+    </header>
+    <main>
+        <div class="list-switcher">
+            <input type="checkbox" id="abyssinian" class="cat">
+            <input type="checkbox" id="scottish" class="cat">
+            <input type="checkbox" id="russian" class="cat">
+            <input type="checkbox" id="siamese" class="cat">
+        
+
+            <div class="menu">
+                <label for="abyssinian">Абиссинская</label>
+                <label for="scottish">Скоттиш Фолд</label>
+                <label for="russian">Русская голубая</label>
+                <label for="siamese">Сиамская</label>
+            </div>
+
+            <div class="cat">
+                <div class="abyssinian">
+                    <img src="./img/altair.jpg" alt="altair the cat" class="puss">
+                    <p class="cat_name">Альтаир, 5 лет</p>
+                </div>
+
+                <div class="scottish">
+                    <img src="./img/niccolo.jpg" alt="niccolo the cat" class="puss">
+                    <p class="cat_name">Никколо, 2 года</p>
+                </div>
+
+                <div class="russian">
+                    <img src="./img/desmond.jpg" alt="desmond the cat" class="puss">
+                    <p class="cat_name">Дезмонд, 4 года</p>
+                </div>
+
+                <div class="siamese">
+                    <img src="./img/ezio.jpg" alt="desmond the cat" class="puss">
+                    <p class="cat_name">Эцио, 2.5 года</p>
+                </div>
+
+                <div class="abyssinian">
+                    <img src="./img/malik.jpg" alt="malik the cat" class="puss">
+                    <p class="cat_name">Малик, 6 лет</p>
+                </div>
+
+                <div class="siamese">
+                    <img src="./img/leonardo.jpg" alt="leonardo the cat" class="puss">
+                    <p class="cat_name">Леонардо, 6 лет</p>
+                </div>
+
+                <div class="scottish">
+                    <img src="./img/haytham.jpg" alt="haytham the cat" class="puss">
+                    <p class="cat_name">Хейтем, 2 месяца</p>
+                </div>
+
+                <div class="russian">
+                    <img src="./img/shaun.jpg" alt="shaun the cat" class="puss">
+                    <p class="cat_name">Шон, 5 месяцев</p>
+                </div>
+            </div>
+
+            <div class="rating">
+                <p class="rating_header">Рейтинг</p>
+                <label for="rating">по убыванию</label>
+                <input type="checkbox" id="rating">
+
+                <div class="breed_container">
+                    <div class="breed" style="--default: 2;">
+                        <p>Скоттиш Фолд</p>
+                        <div class="scale">
+                            <div class="scale1"></div>
+                            <span class="number">9</span>
+                        </div>
+                    </div>
+
+                    <div class="breed" style="--default: 3;">
+                        <p>Русская голубая</p>
+                        <div class="scale">
+                            <div class="scale2"></div>
+                            <span class="number">8</span>
+                        </div>
+                    </div>
+
+                    <div class="breed" style="--default: 1;">
+                        <p>Абиссинская</p>
+                        <div class="scale">
+                            <div class="scale3"></div>
+                            <span class="number">10</span>
+                        </div>
+                    </div>
+
+                    <div class="breed" style="--default: 4;">
+                        <p>Сиамская</p>
+                        <div class="scale">
+                            <div class="scale4"></div>
+                            <span class="number">4</span>
+                        </div>
+                    </div>
+                </div>
+            </div>  
+        </div>
+    </main>
+    <footer class="copyright">
+        <p>&copy ООО Пушистые Лапки, 2022</p>
+        <span class="adress">Наш адрес: улица Братства, д.5, остров Тибр</span>
+    </footer>
+</body>
+
+</html>

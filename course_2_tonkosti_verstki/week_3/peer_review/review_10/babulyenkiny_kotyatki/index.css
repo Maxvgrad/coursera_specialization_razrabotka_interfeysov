@@ -1,0 +1,263 @@
+html,
+body,
+div,
+span,
+img,
+footer,
+header,
+video {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+}
+
+body {
+  font-family: Arial, Helvetica, sans-serif;
+  font-size: 80%;
+  min-height: 100vh;
+}
+
+.background {
+  background-color: rgb(233, 233, 233);
+  width: 1000px;
+  margin: 0px auto;
+  padding: 20px 0px;
+}
+
+main {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: nowrap;
+  align-items: flex-start;
+
+  margin: 20px auto;
+}
+
+h1 {
+  display: block;
+  width: 1000px;
+  text-align: center;
+  margin: 0;
+}
+
+[type="radio"] {
+  display: none;
+}
+
+#assinian-breed:checked ~ .breed #assinian-breed-button {
+  background-color: rgb(184, 181, 177);
+}
+
+#britan-breed:checked ~ .breed #britan-breed-button {
+  background-color: rgb(184, 181, 177);
+}
+
+#russian-blue-breed:checked ~ .breed #russian-blue-breed-button {
+  background-color: rgb(184, 181, 177);
+}
+
+#siamese-breed:checked ~ .breed #siamese-breed-button {
+  background-color: rgb(184, 181, 177);
+}
+
+#assinian-breed:checked ~ .cat-photo-wrapper #cat-photo-2,
+#assinian-breed:checked ~ .cat-photo-wrapper #cat-photo-3,
+#assinian-breed:checked ~ .cat-photo-wrapper #cat-photo-5,
+#assinian-breed:checked ~ .cat-photo-wrapper #cat-photo-6,
+#assinian-breed:checked ~ .cat-photo-wrapper #cat-photo-7,
+#assinian-breed:checked ~ .cat-photo-wrapper #cat-photo-8 {
+  opacity: 50%;
+}
+
+#britan-breed:checked ~ .cat-photo-wrapper #cat-photo-1,
+#britan-breed:checked ~ .cat-photo-wrapper #cat-photo-2,
+#britan-breed:checked ~ .cat-photo-wrapper #cat-photo-3,
+#britan-breed:checked ~ .cat-photo-wrapper #cat-photo-4,
+#britan-breed:checked ~ .cat-photo-wrapper #cat-photo-7,
+#britan-breed:checked ~ .cat-photo-wrapper #cat-photo-8 {
+  opacity: 50%;
+}
+
+#russian-blue-breed:checked ~ .cat-photo-wrapper #cat-photo-1,
+#russian-blue-breed:checked ~ .cat-photo-wrapper #cat-photo-4,
+#russian-blue-breed:checked ~ .cat-photo-wrapper #cat-photo-5,
+#russian-blue-breed:checked ~ .cat-photo-wrapper #cat-photo-6,
+#russian-blue-breed:checked ~ .cat-photo-wrapper #cat-photo-7,
+#russian-blue-breed:checked ~ .cat-photo-wrapper #cat-photo-8 {
+  opacity: 50%;
+}
+
+#siamese-breed:checked ~ .cat-photo-wrapper #cat-photo-1,
+#siamese-breed:checked ~ .cat-photo-wrapper #cat-photo-2,
+#siamese-breed:checked ~ .cat-photo-wrapper #cat-photo-3,
+#siamese-breed:checked ~ .cat-photo-wrapper #cat-photo-4,
+#siamese-breed:checked ~ .cat-photo-wrapper #cat-photo-5,
+#siamese-breed:checked ~ .cat-photo-wrapper #cat-photo-6 {
+  opacity: 50%;
+}
+
+.breed {
+  background-color: rgb(220, 220, 220);
+  margin: 0 20px;
+  align-self: stretch;
+}
+
+.breed div {
+  padding: 15px;
+  border-bottom: 0.5px solid rgb(133, 133, 133);
+}
+
+.breed div:hover {
+  background-color: rgb(184, 181, 177);
+}
+
+.cat-photo-wrapper {
+  min-width: 500px;
+  max-width: 620px;
+  display: grid;
+  grid-gap: 5px;
+
+  grid-template-columns: 1fr 1fr 1fr;
+  grid-template-rows: 200px 200px 200px 200px;
+}
+
+.cat-photo div {
+  display: none;
+}
+
+img:hover ~ div {
+  display: block;
+  top: -20%;
+  margin: 5px 20%;
+  opacity: 80%;
+  background-color: rgb(240, 240, 240);
+  position: relative;
+  text-align: center;
+  height: 20px;
+  font-weight: bolder;
+  font-size: 110%;
+}
+
+.cat-photo:nth-child(8n-6) {
+  grid-area: 1/2/2/4;
+}
+
+.cat-photo:nth-child(8n + 6) {
+  grid-area: 3/1/4/3;
+}
+
+.cat-photo:nth-child(8n) {
+  grid-area: 4/1/5/4;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rating {
+  background-color: rgb(220, 220, 220);
+  margin: 0 20px;
+}
+
+.rating-header span {
+  font-size: 120%;
+  text-transform: uppercase;
+  color: red;
+}
+
+label.rating-order-switcher {
+  margin-top: 3px;
+  font-size: 10px;
+  position: relative;
+  top: 22px;
+  left: -10%;
+}
+
+#rating-order-checkbox {
+  align-self: flex-end;
+}
+
+.rating div {
+  padding: 3px;
+}
+
+.rating section {
+  display: flex;
+  flex-direction: column;
+  margin: 3px 8px;
+}
+
+#assinian div {
+  padding-top: 0;
+}
+
+.rating-gradient {
+  height: 10px;
+  display: inline-block;
+  padding: 2px;
+  margin: 0 5px;
+}
+
+.rating-9 .rating-gradient {
+  background: linear-gradient(to right, green, rgb(255, 255, 255));
+  width: 90px;
+}
+
+.rating-8 .rating-gradient {
+  background: linear-gradient(to right, yellow, rgb(255, 255, 255));
+  width: 80px;
+}
+
+.rating-10 .rating-gradient {
+  background: linear-gradient(to right, green, rgb(255, 255, 255));
+  width: 100px;
+}
+
+.rating-4 .rating-gradient {
+  background: linear-gradient(to right, red, rgb(255, 255, 255));
+  width: 40px;
+}
+
+#rating-order-checkbox:checked ~ #assinian {
+  order: 1;
+}
+
+#rating-order-checkbox:checked ~ #britan {
+  order: 2;
+}
+
+#rating-order-checkbox:checked ~ #russian-blue {
+  order: 0;
+}
+
+#rating-order-checkbox:checked ~ #siamese {
+  order: 3;
+}
+
+
+.rating section span {
+  font-weight: bold;
+  vertical-align: 3px;
+}
+
+.footer-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+
+footer {
+  position: sticky;
+  bottom: 0px;
+}
+
+.footer-wrapper span {
+  font-size: 70%;
+}
+
+.footer-wrapper span:nth-child(2) {
+  color: blue;
+}

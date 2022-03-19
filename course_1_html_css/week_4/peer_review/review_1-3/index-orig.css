@@ -25,19 +25,19 @@ p
 
 @font-face {
     font-family: englishtowne;
-    src: url('../newspaper/englishtowne-webfont.woff');
+    src: url('../../newspaper/englishtowne-webfont.woff');
 }
 @font-face {
     font-family: RothmanPlain;
-    src: url('RothmanPlain.ttf');
+    src: url('review_1-3/RothmanPlain.ttf');
 }
 @font-face {
     font-family: Matchbook;
-    src: url('Matchbook.otf');
+    src: url('review_1-3/Matchbook.otf');
 }
 @font-face {
     font-family: Polsku;
-    src: url('Polsku.ttf');
+    src: url('review_1-3/Polsku.ttf');
 }
 
 /*––––––––––––––––––Шапка газеты––––––––––––––––––––*/

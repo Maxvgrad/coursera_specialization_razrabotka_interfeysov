@@ -1,0 +1,98 @@
+td {
+    vertical-align: top;
+}
+
+td.pagetop {
+    background: #F0C080 url(mastbg.jpg) center left repeat;
+    width: 750px;
+    border: 1px solid #908070;
+    padding: 5px 0;
+}
+
+td.pagetop img {
+    vertical-align: middle;
+}
+
+td.leftside {
+    width: 120px;
+    background-color: #FEE;
+}
+
+td.leftside div {
+    margin: 0;
+    padding: 0.66em 0.5em 1em 1em;
+    font: bold 11px sans-serif;
+    border: 1px solid gray;
+    background: #EEE;
+}
+
+td.leftside div.left1 {
+    border-color: black black silver gray;
+}
+
+td.leftside div.left2 {
+    border-color: #EEE black black gray;
+}
+
+td.main {
+    padding: 0.5em 2em 1em 3em;
+    font-family: sans-serif;
+    width: 500px;
+    font-size: 13px;
+}
+
+h1 {
+    margin: 0.5em 0 0 -0.5em;
+    font-family: sans-serif;
+    border-bottom: 1px solid black;
+}
+
+div.credit {
+    text-align: right;
+    font-style: italic;
+    margin-right: 1em;
+}
+
+div.abstract {
+    font-style: italic;
+    font-size: 110%;
+    margin: 0.66em 0;
+}
+
+div.abstract cite {
+    font-style: normal;
+}
+
+td.rightside {
+    width: 130px;
+    text-align: center;
+    font: 9px sans-serif;
+    text-decoration: underline;
+    letter-spacing: 1px;
+    padding: 0;
+}
+
+td.rightside div {
+    padding: 10px 0 10px 10px;
+    border-left: 1px solid #666699;
+}
+
+td.rightside img {
+    display: block;
+    margin: 10px 0;
+    width: 120px;
+    height: 80px;
+}
+
+td.footer div {
+    font: bold 10px sans-serif;
+    color: gray;
+    text-align: center;
+    padding: 0.5em 0 0;
+    border-top: 1px solid navy;
+    margin-top: 10px;
+}
+
+div.url {
+    display: none;
+}

@@ -1,0 +1,32 @@
+h1 {
+    font-family: sans-serif;
+    border-bottom: 0.1em solid red;
+    margin-bottom: 0;
+}
+
+td {
+    padding: 0.25em 1px;
+}
+
+tr.required td.lbl {
+    background: #FCC;
+    border-left: .5em solid red;
+}
+
+tr td.lbl {
+    background: #CFC;
+    border-left: .5em solid green;
+}
+
+div#mailArea {
+    display: none;
+}
+
+input.written:focus {
+    background: yellow;
+    font-weight: bold;
+}
+
+input.written {
+    width: 40em;
+}

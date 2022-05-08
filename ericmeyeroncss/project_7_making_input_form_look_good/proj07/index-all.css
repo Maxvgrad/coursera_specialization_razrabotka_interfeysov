@@ -1,0 +1,11 @@
+td.lbl {
+    font-weight: bold;
+    text-align: right;
+}
+
+div.formEnd {
+    text-align: center;
+    margin-top: 1em;
+    padding-top: 1em;
+
+}

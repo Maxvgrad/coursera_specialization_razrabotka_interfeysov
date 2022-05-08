@@ -1,0 +1,20 @@
+.written {
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+select.written {
+    color: white;
+}
+
+td {
+    padding: 0.5em 0.125em;
+}
+
+div#submitArea {
+    display: none;
+}
+
+div#mailArea p:first-line {
+    font-weight: bold;
+}

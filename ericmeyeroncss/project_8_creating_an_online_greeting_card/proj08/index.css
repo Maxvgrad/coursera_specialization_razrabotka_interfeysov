@@ -1,0 +1,38 @@
+#card {
+    position: relative;
+    width: 575px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#sentiment {
+    position: absolute;
+    top: 30px;
+    right: 25px;
+    width: 50%;
+    text-align: right;
+    color: white;
+    font: italic normal bold 2em Arial, sans-serif;
+    padding: 5px;
+    background: transparent url("halfscreen-black.gif");
+}
+
+#signature {
+    position: absolute;
+    top: 335px;
+    width: 100%;
+    text-align: center;
+    left: 0;
+    right: 0;
+}
+
+#credit {
+    position: relative;
+    top: -10px;
+    font: .8em "Times New Roman", serif;
+    color: silver;
+    text-align: right;
+    margin-right: 25px;
+}
+
+
